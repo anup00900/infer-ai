@@ -1,8 +1,12 @@
 <div align="center">
 
+<br>
+
 # INFER
 
 ### We don't guess. We infer.
+
+<br>
 
 [![GPT-4.1](https://img.shields.io/badge/LLM-GPT--4.1-blue?style=for-the-badge&logo=openai&logoColor=white)](https://azure.microsoft.com/en-us/products/ai-services/openai-service)
 [![GraphRAG](https://img.shields.io/badge/Knowledge-GraphRAG-0ea5e9?style=for-the-badge&logo=microsoftazure&logoColor=white)](https://github.com/microsoft/graphrag)
@@ -11,15 +15,21 @@
 [![Python](https://img.shields.io/badge/Backend-Python%203.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-**Upload any document. Simulate the future. Predict what happens next.**
+<br>
 
-*Multi-Agent Prediction Engine*
+**Upload any document. Simulate the future. Predict what happens next.**
 
 *A multi-agent swarm intelligence engine that simulates public opinion, market sentiment, and social dynamics using GPT-4.1 and in-memory GraphRAG.*
 
----
+<br>
+
+<img src="docs/screenshots/01_landing.jpg" alt="INFER Landing Page" width="100%">
+
+<br>
 
 </div>
+
+---
 
 ## What is Infer?
 
@@ -29,6 +39,77 @@ Infer is an **enterprise-grade multi-agent prediction engine**. Upload any docum
 Document  -->  Knowledge Graph  -->  Agent Personas  -->  Simulation  -->  Prediction Report
   (PDF)        (GraphRAG)           (GPT-4.1)           (Multi-Agent)     (Analysis + Chat)
 ```
+
+---
+
+## Demo
+
+### Step 1 -- Knowledge Graph Construction
+
+Upload a document and watch Infer extract entities, relationships, and build a live knowledge graph using GraphRAG with Azure OpenAI.
+
+<div align="center">
+<img src="docs/screenshots/02_knowledge_graph.jpg" alt="Knowledge Graph Build" width="90%">
+<br><em>Interactive D3.js knowledge graph with real-time entity extraction -- 138 nodes, 67 relationships, 10 entity types</em>
+</div>
+
+<br>
+
+### Step 2 -- Agent Persona Generation
+
+Infer automatically generates hundreds of AI agent personas, each with unique personalities, opinions, influence levels, memory, and behavioral patterns drawn from the knowledge graph.
+
+<div align="center">
+<img src="docs/screenshots/03_agent_personas.jpg" alt="Agent Persona Generation" width="90%">
+<br><em>75 agent groups, 143 personas total, 14,731 topic associations generated from the document</em>
+</div>
+
+<br>
+
+<div align="center">
+<img src="docs/screenshots/03b_agent_detail.jpg" alt="Agent Persona Detail" width="90%">
+<br><em>Each agent has a full biography, social relationship network, behavioral patterns, and memory imprints</em>
+</div>
+
+<br>
+
+### Step 3 -- Multi-Platform Simulation
+
+Configure and run dual-platform simulations (Twitter + Reddit) with customizable parameters: duration, rounds, peak hours, agent activity periods, and recommendation algorithms.
+
+<div align="center">
+<img src="docs/screenshots/04_simulation_config.jpg" alt="Simulation Configuration" width="90%">
+<br><em>3-hour simulation across 3 rounds with 143 agents, configurable peak/valley periods and agent configurations</em>
+</div>
+
+<br>
+
+### Step 4 -- Prediction Report
+
+The Report Agent analyzes post-simulation data, conducts agent interviews, searches the knowledge graph, and generates a structured prediction report with sentiment analysis and probability distributions.
+
+<div align="center">
+<img src="docs/screenshots/05_report.jpg" alt="Prediction Report" width="90%">
+<br><em>AI-generated prediction report: "Simulated Market Futures: S&P 500, Oil Shock, and Fed Dynamics in Early 2026"</em>
+</div>
+
+<br>
+
+### Step 5 -- Deep Interaction
+
+Chat directly with the Report Agent or any individual agent from the simulation. Ask them why they said what they said -- full memory and personality persists.
+
+<div align="center">
+<img src="docs/screenshots/06_interaction.jpg" alt="Deep Interaction" width="90%">
+<br><em>Interactive tools: Report Agent Chat, Insight Forge, Panoramic Tracking, QuickSearch, and Virtual Interviews</em>
+</div>
+
+<br>
+
+<div align="center">
+<img src="docs/screenshots/07_agent_chat.jpg" alt="Chat with Any Agent" width="90%">
+<br><em>Chat with any agent -- big_tech_886, the_fed_209, khameneis_son_369 -- each with their own worldview</em>
+</div>
 
 ---
 
@@ -67,55 +148,31 @@ Document  -->  Knowledge Graph  -->  Agent Personas  -->  Simulation  -->  Predi
 
 ---
 
-## Key Innovations vs Original
+## Key Innovations
 
-This project is a **complete reimagining** of the original Chinese-language MiroFish simulation engine. Here's what changed:
-
-| Feature | Original (Chinese) | **Infer** |
+| Feature | Original | **Infer** |
 |---|---|---|
-| **Language** | Chinese UI (1000+ strings) | **Full English UI** |
 | **LLM** | Ollama / qwen2.5 (local) | **Azure OpenAI GPT-4.1** |
-| **Embeddings** | nomic-embed-text (768d, local) | **text-embedding-3-large (3072d)** |
+| **Embeddings** | nomic-embed-text (768d) | **text-embedding-3-large (3072d)** |
 | **Graph Database** | Neo4j Community Edition | **In-Memory GraphRAG (zero dependencies)** |
-| **Setup Complexity** | Docker + Neo4j + Ollama + GPU | **Single `pip install` + API key** |
-| **Hardware Required** | 16GB RAM + 10GB VRAM minimum | **Any machine with internet** |
-| **UI Theme** | White/light theme | **Premium dark blue/black theme** |
-| **Cloud Dependencies** | None (fully local) | **Azure OpenAI (superior quality)** |
+| **Setup** | Docker + Neo4j + Ollama + GPU | **Single `pip install` + API key** |
+| **Hardware** | 16GB RAM + 10GB VRAM minimum | **Any machine with internet** |
+| **UI** | White/light theme | **Premium dark blue/black theme** |
 | **Vector Search** | Neo4j vector indexes | **Numpy cosine similarity + BM25 hybrid** |
 | **Data Persistence** | Neo4j database files | **JSON file persistence** |
-| **Knowledge Extraction** | Basic NER via Ollama | **Advanced NER/RE via GPT-4.1** |
-
-### What's New
-
-- **Zero-Infrastructure Setup** -- No Docker, no Neo4j, no GPU required. Just Python + Node.js + an API key.
-- **4x Better Embeddings** -- text-embedding-3-large produces 3072-dimensional vectors vs the original 768d, capturing far more semantic nuance.
-- **GPT-4.1 Intelligence** -- Every agent persona, every simulation step, every report is powered by state-of-the-art GPT-4.1 instead of local quantized models.
-- **In-Memory GraphRAG** -- The knowledge graph runs entirely in memory with hybrid vector + keyword search. No external database means no connection issues, no schema migrations, no port conflicts.
-- **Premium Dark UI** -- A completely redesigned interface with a professional dark blue/black aesthetic, animated elements, and modern typography.
 
 ---
 
-## Workflow
+## Use Cases
 
-```
-1. GRAPH BUILD       Extract entities & relationships from your document.
-                     Build a knowledge graph with Azure OpenAI GraphRAG.
-
-2. ENV SETUP         Generate hundreds of agent personas with unique
-                     personalities, opinions, influence levels, and memory.
-
-3. SIMULATION        Agents interact on simulated social platforms:
-                     posting, replying, arguing, shifting opinions.
-                     Sentiment tracked in real-time.
-
-4. REPORT            ReportAgent analyzes post-simulation data,
-                     interviews focus groups, searches the knowledge
-                     graph, and generates structured analysis.
-
-5. INTERACTION       Chat with any agent from the simulated world.
-                     Ask them why they said what they said.
-                     Full memory and personality persists.
-```
+| Use Case | Description |
+|---|---|
+| **PR Crisis Testing** | Simulate public reaction to a press release before publishing |
+| **Trading Signals** | Feed financial news, observe simulated market sentiment shifts |
+| **Policy Impact** | Test draft regulations against simulated public response |
+| **Competitive Analysis** | Model how markets react to competitor announcements |
+| **Product Launch** | Predict social media response to product announcements |
+| **Risk Assessment** | Simulate cascading effects of organizational decisions |
 
 ---
 
@@ -131,8 +188,8 @@ This project is a **complete reimagining** of the original Chinese-language Miro
 
 ```bash
 # Clone the repository
-git clone https://github.com/anuproy/infer.git
-cd infer
+git clone https://github.int.inceptionai.ai/INCEPTION/infer-ai.git
+cd infer-ai
 
 # Configure your API key
 cp .env.example .env
@@ -179,19 +236,6 @@ GRAPH_DATA_DIR=./data/graphs
 
 ---
 
-## Use Cases
-
-| Use Case | Description |
-|---|---|
-| **PR Crisis Testing** | Simulate public reaction to a press release before publishing |
-| **Trading Signals** | Feed financial news, observe simulated market sentiment shifts |
-| **Policy Impact** | Test draft regulations against simulated public response |
-| **Competitive Analysis** | Model how markets react to competitor announcements |
-| **Product Launch** | Predict social media response to product announcements |
-| **Risk Assessment** | Simulate cascading effects of organizational decisions |
-
----
-
 ## Tech Stack
 
 | Component | Technology |
@@ -210,7 +254,7 @@ GRAPH_DATA_DIR=./data/graphs
 ## Project Structure
 
 ```
-infer/
+infer-ai/
   backend/
     app/
       api/           # Flask REST API endpoints
