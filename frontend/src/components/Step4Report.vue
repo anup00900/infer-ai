@@ -420,14 +420,38 @@ const goToInteraction = () => {
   }
 }
 
+const triggerDownload = async (url, fallbackFilename) => {
+  try {
+    const response = await fetch(url)
+    if (!response.ok) throw new Error(`Download failed: ${response.status}`)
+    const blob = await response.blob()
+    const disposition = response.headers.get('Content-Disposition')
+    let filename = fallbackFilename
+    if (disposition) {
+      const match = disposition.match(/filename="?([^";\n]+)"?/)
+      if (match) filename = match[1]
+    }
+    const objectUrl = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = objectUrl
+    a.download = filename
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+    URL.revokeObjectURL(objectUrl)
+  } catch (error) {
+    console.error('Download failed:', error)
+  }
+}
+
 const downloadMarkdown = () => {
   if (!props.reportId) return
-  window.open(`/api/report/${props.reportId}/download`, '_blank')
+  triggerDownload(`/api/report/${props.reportId}/download`, `report_${props.reportId.slice(0, 8)}.md`)
 }
 
 const downloadPDF = () => {
   if (!props.reportId) return
-  window.open(`/api/report/${props.reportId}/download/pdf`, '_blank')
+  triggerDownload(`/api/report/${props.reportId}/download/pdf`, `report_${props.reportId.slice(0, 8)}.html`)
 }
 
 // State
