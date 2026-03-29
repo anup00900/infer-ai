@@ -170,9 +170,10 @@ class Pipeline:
         with open(os.path.join(sim_dir, "simulation_requirement.txt"), "w") as f:
             f.write(sim_requirement)
 
-        # Calculate target date
+        # Calculate target date (trading days — skip weekends)
+        from forward_testing.runner.question_designer import _add_trading_days
         dt = datetime.strptime(date_str, "%Y-%m-%d")
-        target_dt = dt + timedelta(days=HORIZON_DAYS[horizon])
+        target_dt = _add_trading_days(dt, HORIZON_DAYS[horizon])
         target_date = target_dt.strftime("%Y-%m-%d")
 
         # Run simulation via API

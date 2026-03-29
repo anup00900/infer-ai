@@ -5,6 +5,18 @@ from datetime import datetime, timedelta
 logger = logging.getLogger(__name__)
 
 
+def _add_trading_days(start: datetime, trading_days: int) -> datetime:
+    """Add N trading days (skip weekends) to a date."""
+    current = start
+    added = 0
+    while added < trading_days:
+        current += timedelta(days=1)
+        # Monday=0 ... Friday=4, Saturday=5, Sunday=6
+        if current.weekday() < 5:
+            added += 1
+    return current
+
+
 class QuestionDesigner:
     """Reads the financial seed content and produces simulation prompts."""
 
@@ -25,13 +37,13 @@ class QuestionDesigner:
         tickers_str = ", ".join(self.tickers)
 
         if horizon == "t1":
-            target = dt + timedelta(days=1)
+            target = _add_trading_days(dt, 1)
             return self._t1_prompt(run_date, target.strftime("%Y-%m-%d"), tickers_str)
         elif horizon == "t3":
-            target = dt + timedelta(days=3)
+            target = _add_trading_days(dt, 3)
             return self._t3_prompt(run_date, target.strftime("%Y-%m-%d"), tickers_str)
         elif horizon == "t7":
-            target = dt + timedelta(days=7)
+            target = _add_trading_days(dt, 7)
             return self._t7_prompt(run_date, target.strftime("%Y-%m-%d"), tickers_str)
         else:
             raise ValueError(f"Unknown horizon: {horizon}")
