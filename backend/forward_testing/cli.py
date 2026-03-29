@@ -1,10 +1,16 @@
 """
-CLI entry point for the forward testing news pipeline.
+CLI entry point for the Infer Forward Testing Pipeline.
 Usage:
-    python -m forward_testing.cli init                 # Initialize live seed from original
-    python -m forward_testing.cli fetch-prices         # Fetch prices only
-    python -m forward_testing.cli fetch-news           # Fetch news + append to MD
-    python -m forward_testing.cli status               # Show pipeline status
+    python -m forward_testing.cli init                           # Initialize live seed
+    python -m forward_testing.cli fetch-prices                   # Fetch market prices
+    python -m forward_testing.cli fetch-news                     # Fetch news + append to MD
+    python -m forward_testing.cli run-pipeline                   # Run full daily pipeline
+    python -m forward_testing.cli run-pipeline --phase prices    # Prices only
+    python -m forward_testing.cli run-pipeline --phase news      # News only
+    python -m forward_testing.cli run-pipeline --phase simulations  # Simulations only
+    python -m forward_testing.cli install-cron                   # Install daily cron jobs
+    python -m forward_testing.cli uninstall-cron                 # Remove cron jobs
+    python -m forward_testing.cli status                         # Show pipeline status
 """
 import argparse
 import json
@@ -82,6 +88,44 @@ def cmd_fetch_news(config, args):
     logger.info(f"  Sources: {result.source_counts}")
 
 
+def cmd_run_pipeline(config, args):
+    """Run the full daily pipeline or a specific phase."""
+    from forward_testing.pipeline import Pipeline
+    pipe = Pipeline(config)
+    date_str = args.date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    phase = args.phase
+
+    if phase == "prices":
+        pipe.run_prices_only(date_str)
+    elif phase == "news":
+        pipe.run_news_only(date_str)
+    elif phase == "simulations":
+        pipe.run_simulations_only(date_str)
+    else:
+        pipe.run_daily(date_str)
+
+
+def cmd_install_cron(config, args):
+    """Install launchd cron jobs for automated daily runs."""
+    from forward_testing.automation.launchd_setup import install_cron
+    project_dir = os.path.dirname(config.base_dir)
+    install_cron(project_dir)
+
+
+def cmd_uninstall_cron(config, args):
+    """Remove launchd cron jobs."""
+    from forward_testing.automation.launchd_setup import uninstall_cron
+    uninstall_cron()
+
+
+def cmd_list_cron(config, args):
+    """List installed cron jobs."""
+    from forward_testing.automation.launchd_setup import list_cron
+    jobs = list_cron()
+    for job in jobs:
+        logger.info(f"  {job['schedule']}  {job['name']:20s}  [{job['status']}]")
+
+
 def cmd_status(config, args):
     augmenter = MDAugmenter(config)
     if os.path.exists(augmenter.live_path):
@@ -99,6 +143,13 @@ def cmd_status(config, args):
     else:
         logger.info("Results: no data yet")
 
+    # Show cron status
+    from forward_testing.automation.launchd_setup import list_cron
+    jobs = list_cron()
+    logger.info("Cron jobs:")
+    for job in jobs:
+        logger.info(f"  {job['schedule']}  {job['name']:20s}  [{job['status']}]")
+
 
 def main():
     parser = argparse.ArgumentParser(description="Infer Forward Testing Pipeline")
@@ -113,13 +164,26 @@ def main():
     news_parser = subparsers.add_parser("fetch-news", help="Fetch news and append to seed")
     news_parser.add_argument("--date", help="Override date (YYYY-MM-DD)")
 
+    pipeline_parser = subparsers.add_parser("run-pipeline", help="Run full daily pipeline")
+    pipeline_parser.add_argument("--date", help="Override date (YYYY-MM-DD)")
+    pipeline_parser.add_argument("--phase", choices=["prices", "news", "simulations"],
+                                 help="Run only a specific phase")
+
+    subparsers.add_parser("install-cron", help="Install daily cron jobs (launchd)")
+    subparsers.add_parser("uninstall-cron", help="Remove daily cron jobs")
+    subparsers.add_parser("list-cron", help="List installed cron jobs")
     subparsers.add_parser("status", help="Show pipeline status")
+
     args = parser.parse_args()
     config = ForwardTestingConfig()
     commands = {
         "init": cmd_init,
         "fetch-prices": cmd_fetch_prices,
         "fetch-news": cmd_fetch_news,
+        "run-pipeline": cmd_run_pipeline,
+        "install-cron": cmd_install_cron,
+        "uninstall-cron": cmd_uninstall_cron,
+        "list-cron": cmd_list_cron,
         "status": cmd_status,
     }
     commands[args.command](config, args)
