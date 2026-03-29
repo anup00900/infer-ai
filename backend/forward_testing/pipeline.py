@@ -40,7 +40,7 @@ class Pipeline:
         logger.info(f"=== Forward Testing Pipeline: {date_str} ===")
 
         # Phase 1: Fetch prices (for actuals + scoring)
-        if not checkpoint.get("fetch_prices"):
+        if checkpoint.get("fetch_prices") != "completed":
             try:
                 logger.info("Phase 1: Fetching market prices...")
                 actuals = fetch_actuals(date_str, self.config.tickers, day_dir)
@@ -51,7 +51,7 @@ class Pipeline:
                 self._save_checkpoint(day_dir, "fetch_prices", "failed")
 
         # Phase 2: Fetch news + augment MD
-        if not checkpoint.get("fetch_news"):
+        if checkpoint.get("fetch_news") != "completed":
             try:
                 logger.info("Phase 2: Fetching news and augmenting seed file...")
                 self._run_news_pipeline(date_str, day_dir)
@@ -68,7 +68,7 @@ class Pipeline:
 
         for horizon in HORIZONS:
             phase_key = f"simulation_{horizon}"
-            if checkpoint.get(phase_key):
+            if checkpoint.get(phase_key) == "completed":
                 logger.info(f"  Skipping {horizon} (already completed)")
                 continue
 
@@ -97,11 +97,17 @@ class Pipeline:
         self._run_news_pipeline(date_str, day_dir)
 
     def run_prices_only(self, date_str: str = None):
-        """Run only the price fetch phase."""
+        """Run price fetch + score matured predictions."""
         date_str = date_str or datetime.now(timezone.utc).strftime("%Y-%m-%d")
         day_dir = os.path.join(self.config.results_dir, date_str)
         os.makedirs(day_dir, exist_ok=True)
         fetch_actuals(date_str, self.config.tickers, day_dir)
+        self._score_matured_predictions(date_str, day_dir)
+        try:
+            rolling_path = os.path.join(self.config.results_dir, "rolling_scorecard.json")
+            compute_rolling_scorecard(self.config.results_dir, rolling_path)
+        except Exception as e:
+            logger.warning(f"Rolling scorecard failed: {e}")
 
     def run_simulations_only(self, date_str: str = None):
         """Run only the simulation phase (assumes news already fetched)."""
@@ -114,7 +120,7 @@ class Pipeline:
         for horizon in HORIZONS:
             checkpoint = self._load_checkpoint(day_dir)
             phase_key = f"simulation_{horizon}"
-            if checkpoint.get(phase_key):
+            if checkpoint.get(phase_key) == "completed":
                 logger.info(f"  Skipping {horizon} (already completed)")
                 continue
             try:
@@ -219,8 +225,9 @@ class Pipeline:
         if not os.path.exists(actuals_path):
             return
 
-        # Check all past dates for predictions targeting today
-        for day_name in sorted(os.listdir(self.config.results_dir)):
+        # Check last 10 days for predictions targeting today (T+7 is max horizon)
+        all_days = sorted(d for d in os.listdir(self.config.results_dir) if d.startswith("20"))
+        for day_name in all_days[-10:]:
             day_path = os.path.join(self.config.results_dir, day_name)
             if not os.path.isdir(day_path) or not day_name.startswith("20"):
                 continue

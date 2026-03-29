@@ -40,6 +40,31 @@ JOBS = {
 }
 
 
+def _env_vars_xml(project_dir: str) -> str:
+    """Read .env file and generate plist XML key-value pairs for Azure OpenAI vars."""
+    env_file = os.path.join(project_dir, ".env")
+    if not os.path.exists(env_file):
+        env_file = os.path.join(project_dir, "backend", ".env")
+    if not os.path.exists(env_file):
+        return ""
+
+    lines = []
+    with open(env_file) as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if "=" in line:
+                key, _, value = line.partition("=")
+                key = key.strip()
+                value = value.strip()
+                # Forward Azure OpenAI and INFER vars
+                if key.startswith(("AZURE_OPENAI", "EMBEDDING_", "INFER_")):
+                    lines.append(f"        <key>{key}</key>")
+                    lines.append(f"        <string>{value}</string>")
+    return "\n".join(lines)
+
+
 def _generate_plist(job_name: str, job_config: dict, python_path: str, project_dir: str) -> str:
     """Generate a launchd plist XML string."""
     label = job_config["label"]
@@ -91,6 +116,7 @@ def _generate_plist(job_name: str, job_config: dict, python_path: str, project_d
         <string>/usr/local/bin:/usr/bin:/bin:{os.path.dirname(python_path)}</string>
         <key>PYTHONPATH</key>
         <string>{os.path.join(project_dir, 'backend')}</string>
+{_env_vars_xml(project_dir)}
     </dict>
 
     <key>RunAtLoad</key>

@@ -54,16 +54,12 @@ def _scrape_single(item: NewsItem) -> NewsItem:
     return item
 
 
-def enrich_with_full_text(items: List[NewsItem], max_workers: int = 10, max_articles: int = 100) -> List[NewsItem]:
-    """Scrape full article text for the most important news items.
-
-    Prioritizes items by category importance and limits to max_articles
-    to avoid excessive scraping time.
+def enrich_with_full_text(items: List[NewsItem], max_workers: int = 15) -> List[NewsItem]:
+    """Scrape full article text for all news items, prioritized by category.
 
     Args:
         items: List of NewsItem to enrich
         max_workers: Concurrent scraping threads
-        max_articles: Max articles to scrape (to control time)
     """
     # Priority order for scraping
     priority = {

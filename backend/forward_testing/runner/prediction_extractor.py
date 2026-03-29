@@ -221,7 +221,7 @@ def _regex_extraction(
             ]} for t in tickers
         ],
         "narrative_prediction": {
-            "current_dominant_narrative": report_md if report_md else "No report content",
+            "current_dominant_narrative": report_md[:1000] if report_md else "No report content",
             "predicted_narrative_shift": {"most_likely": {"probability": 0.5, "narrative": "See full report", "trigger": "See full report"}},
             "wildcards": []
         },
@@ -231,7 +231,7 @@ def _regex_extraction(
             "bull_camp": {"percentage": bull_pct, "core_argument": "See report"},
             "bear_camp": {"percentage": 1 - bull_pct, "core_argument": "See report"},
         },
-        "raw_report_full": report_md,
+        "report_length_chars": len(report_md) if report_md else 0,
     }
 
     return prediction

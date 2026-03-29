@@ -2,7 +2,7 @@ import json
 import logging
 import os
 from dataclasses import dataclass, field
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from typing import Dict, List, Optional
 
 from forward_testing.config import ForwardTestingConfig
@@ -39,7 +39,7 @@ class NewsAggregator:
 
     def fetch_all(self) -> AggregatedNews:
         """Call all sources, deduplicate news, group by category, and return AggregatedNews."""
-        today = datetime.utcnow().date()
+        today = datetime.now(timezone.utc).date()
 
         # Collect news from all sources, tracking per-source counts before dedup
         raw_items: List[NewsItem] = []
