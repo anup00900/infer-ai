@@ -57,7 +57,7 @@ class ReutersAPFetcher:
             resp.raise_for_status()
             feed = feedparser.parse(resp.content)
             items = []
-            for entry in feed.entries[:20]:
+            for entry in feed.entries:  # No limit
                 title = entry.get("title", "")
                 published = None
                 if hasattr(entry, "published_parsed") and entry.published_parsed:

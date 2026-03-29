@@ -84,7 +84,7 @@ def test_fetch_feed_returns_up_to_20_items(mock_get):
     fetcher = FedGovFetcher(ForwardTestingConfig())
     items = fetcher._fetch_feed("https://federalreserve.gov/feeds/press_all.xml", "fed_press")
 
-    assert len(items) == 20
+    assert len(items) == 25  # No limit — all items included
 
 
 @patch("forward_testing.news.sources.fed_gov.requests.get")

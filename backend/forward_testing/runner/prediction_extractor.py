@@ -144,7 +144,7 @@ Return ONLY valid JSON with this exact structure:
 Extract ALL values from the report. For probabilities, infer from the language used (e.g., "most likely" = 0.4-0.6, "unlikely" = 0.1-0.2). For ranges, use specific numbers mentioned in the report.
 
 REPORT:
-{report_md[:12000]}"""
+{report_md}"""
 
         response = client.chat.completions.create(
             model=deployment,
@@ -221,7 +221,7 @@ def _regex_extraction(
             ]} for t in tickers
         ],
         "narrative_prediction": {
-            "current_dominant_narrative": report_md[:200] if report_md else "No report content",
+            "current_dominant_narrative": report_md if report_md else "No report content",
             "predicted_narrative_shift": {"most_likely": {"probability": 0.5, "narrative": "See full report", "trigger": "See full report"}},
             "wildcards": []
         },
@@ -231,7 +231,7 @@ def _regex_extraction(
             "bull_camp": {"percentage": bull_pct, "core_argument": "See report"},
             "bear_camp": {"percentage": 1 - bull_pct, "core_argument": "See report"},
         },
-        "raw_report_excerpt": report_md[:500],
+        "raw_report_full": report_md,
     }
 
     return prediction

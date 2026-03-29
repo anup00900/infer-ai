@@ -32,7 +32,7 @@ class FedGovFetcher:
             resp.raise_for_status()
             feed = feedparser.parse(resp.content)
             items = []
-            for entry in feed.entries[:20]:
+            for entry in feed.entries:  # No limit
                 published = None
                 if hasattr(entry, "published_parsed") and entry.published_parsed:
                     published = datetime(*entry.published_parsed[:6], tzinfo=timezone.utc)

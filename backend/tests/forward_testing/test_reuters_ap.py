@@ -77,7 +77,7 @@ def test_fetch_feed_returns_up_to_20_items(mock_get):
     fetcher = ReutersAPFetcher(ForwardTestingConfig())
     items = fetcher._fetch_feed("https://example.com/feed", "reuters_world")
 
-    assert len(items) == 20
+    assert len(items) == 25  # No limit — all items included
 
 
 @patch("forward_testing.news.sources.reuters_ap.requests.get")

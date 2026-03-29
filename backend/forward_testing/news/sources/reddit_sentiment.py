@@ -52,7 +52,7 @@ class RedditSentimentFetcher:
 
                 items.append(NewsItem(
                     title=title,
-                    summary=body[:500] if body else title,
+                    summary=body if body else title,
                     source="reddit",
                     category="sentiment",
                     url=url_post,

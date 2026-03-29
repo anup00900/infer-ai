@@ -83,7 +83,7 @@ class NewsAggregator:
         # Scrape full article text for top items
         try:
             from forward_testing.news.article_scraper import enrich_with_full_text
-            deduped_items = enrich_with_full_text(deduped_items, max_workers=10, max_articles=80)
+            deduped_items = enrich_with_full_text(deduped_items, max_workers=15)
         except Exception as e:
             logger.warning(f"Article scraping failed (continuing with headlines): {e}")
 

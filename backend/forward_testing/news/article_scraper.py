@@ -22,7 +22,7 @@ def _scrape_single(item: NewsItem) -> NewsItem:
         if article.text and len(article.text) > 100:
             item.full_text = article.text
             if item.summary == item.title:
-                item.summary = article.text[:500]
+                item.summary = article.text
             return item
     except Exception:
         pass
@@ -45,9 +45,9 @@ def _scrape_single(item: NewsItem) -> NewsItem:
                 lines = [l.strip() for l in text.split("\n") if l.strip() and len(l.strip()) > 20]
                 text = "\n\n".join(lines)
                 if len(text) > 100:
-                    item.full_text = text[:5000]
+                    item.full_text = text
                     if item.summary == item.title:
-                        item.summary = text[:500]
+                        item.summary = text
     except Exception as e:
         logger.debug(f"Scrape failed for {item.url}: {e}")
 
@@ -77,10 +77,9 @@ def enrich_with_full_text(items: List[NewsItem], max_workers: int = 10, max_arti
         "sentiment": 7,
     }
 
-    # Sort by priority, take top N
+    # Sort by priority, scrape all
     sorted_items = sorted(items, key=lambda x: priority.get(x.category, 99))
-    to_scrape = sorted_items[:max_articles]
-    rest = sorted_items[max_articles:]
+    to_scrape = sorted_items  # No limit — scrape everything
 
     scraped_count = 0
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
@@ -93,4 +92,4 @@ def enrich_with_full_text(items: List[NewsItem], max_workers: int = 10, max_arti
             results.append(item)
 
     logger.info(f"Article scraper: {scraped_count}/{len(to_scrape)} articles scraped successfully")
-    return results + rest
+    return results

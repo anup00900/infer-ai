@@ -71,7 +71,6 @@ class MDFormatter:
             "### Political & Geopolitical Developments",
             ["geopolitical", "us_politics"],
             data.grouped,
-            max_items=15,
         ))
         sections.append("")
 
@@ -198,15 +197,11 @@ class MDFormatter:
         header: str,
         categories: List[str],
         grouped: Dict[str, List[NewsItem]],
-        max_items: int = 0,
     ) -> str:
         lines = [header, ""]
         items: List[NewsItem] = []
         for cat in categories:
             items.extend(grouped.get(cat, []))
-
-        if max_items > 0:
-            items = items[:max_items]
 
         if not items:
             lines.append("*(no items)*")
@@ -216,8 +211,8 @@ class MDFormatter:
                 lines.append(f"- **[{tag}]** {item.title}")
                 # Include full article text if available
                 if item.full_text:
-                    # Indent the full text as a blockquote, truncate to 2000 chars
-                    body = item.full_text[:2000].strip()
+                    # Indent the full text as a blockquote — no truncation
+                    body = item.full_text.strip()
                     for para in body.split("\n\n"):
                         para = para.strip()
                         if para:
@@ -249,12 +244,12 @@ class MDFormatter:
             lines.append("*(no ticker updates)*")
         else:
             for ticker in ordered_tickers:
-                top_items = ticker_items[ticker][:3]
+                top_items = ticker_items[ticker]  # All items, no limit
                 lines.append(f"**{ticker}:**")
                 for item in top_items:
                     lines.append(f"- {item.title}")
                     if item.full_text:
-                        body = item.full_text[:1500].strip()
+                        body = item.full_text.strip()
                         for para in body.split("\n\n"):
                             para = para.strip()
                             if para:
