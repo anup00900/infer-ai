@@ -1,0 +1,109 @@
+{
+  "sp500_scenarios": {
+    "bull": {
+      "probability": 0.225,
+      "narrative": "A diplomatic breakthrough or dovish Fed surprise triggers a sharp rally. Unexpected economic stimulus or central bank intervention stabilizes markets and boosts investor confidence. Some retail traders are making high-conviction bullish bets, doubling down despite recent losses."
+    },
+    "base": {
+      "probability": 0.475,
+      "narrative": "A choppy, range-bound session as markets digest volatility across multiple sectors without a decisive event. The market remains sensitive to any escalation or de-escalation in regional conflicts, especially those affecting global energy prices and investor confidence."
+    },
+    "bear": {
+      "probability": 0.225,
+      "narrative": "A major escalation in the Middle East, new export controls, or a significant cyber event drives sharp downside. Options market activity shows high volume and put/call skew as institutions hedge for negative tail risk."
+    },
+    "tail": {
+      "probability": 0.075,
+      "narrative": "Black swan events such as a major military incident, cyberattack on financial infrastructure, or abrupt regulatory shock. A credible report of a large-scale security breach or new aggressive regulations targeting big tech could trigger a sharp drop."
+    }
+  },
+  "oil_outlook": "Oil prices are expected to remain elevated or rise further due to ongoing Middle East conflict, China's gallium export ban, and persistent supply chain shocks. Macro strategists cite the risk of oil at $110–$200 per barrel, with energy shocks as a persistent market-mover.",
+  "gold_outlook": "Gold is likely to remain firm or trend higher as investors seek safety amid geopolitical risk, inflation concerns, and rising Treasury yields. Wells Fargo and other analysts have reset gold price targets higher for the rest of 2026.",
+  "vix_outlook": "Volatility is expected to remain high, with the VIX reflecting institutional hedging and options market activity. Elevated put/call skew and large block trades in S&P 500 and tech options indicate persistent anxiety about tail risks.",
+  "ticker_outlook": {
+    "NVDA": {
+      "bull_probability": 0.3,
+      "bear_probability": 0.25,
+      "sentiment": "Retail strongly bullish, institutions cautious",
+      "key_driver": "AI chip policy, regulatory headlines, options activity"
+    },
+    "AAPL": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.2,
+      "sentiment": "Slightly bullish",
+      "key_driver": "Product cycle news, demand concerns"
+    },
+    "MSFT": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.25,
+      "sentiment": "Neutral to bearish short-term",
+      "key_driver": "AI monetization, cloud margins, options hedging"
+    },
+    "GOOGL": {
+      "bull_probability": null,
+      "bear_probability": null,
+      "sentiment": null,
+      "key_driver": null
+    },
+    "META": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.3,
+      "sentiment": "Mixed",
+      "key_driver": "AI monetization, regulatory/data privacy risk"
+    },
+    "AMZN": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.2,
+      "sentiment": "Neutral to mildly bullish",
+      "key_driver": "Cloud and retail stability, macro headwinds"
+    },
+    "AMD": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.25,
+      "sentiment": "Retail bullish, institutions hedging",
+      "key_driver": "AI cycle, export controls, options skew"
+    },
+    "AVGO": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.2,
+      "sentiment": "Institutional bullishness",
+      "key_driver": "AI hardware demand, Meta custom ASICs"
+    },
+    "ORCL": {
+      "bull_probability": 0.15,
+      "bear_probability": 0.2,
+      "sentiment": "Cautious to bearish",
+      "key_driver": "AI spend, debt concerns"
+    },
+    "MU": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.2,
+      "sentiment": "Balanced",
+      "key_driver": "DRAM/NAND normalization, pricing pressure"
+    },
+    "QCOM": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.2,
+      "sentiment": "Value buyers emerging",
+      "key_driver": "Smartphone demand, competition, regulatory risk"
+    }
+  },
+  "dominant_narrative": "The market is caught in a tug-of-war between macro stability and the risk of abrupt shocks. Geopolitical risk, energy shocks, and regulatory headlines drive volatility, while investors debate whether AI and tech earnings can deliver material growth amid persistent uncertainty.",
+  "narrative_shift": "If overnight news is benign or a diplomatic de-escalation occurs, the narrative may shift from macro and geopolitical anxiety to company-specific AI execution and earnings quality as the main driver.",
+  "bull_argument": "A surprise diplomatic breakthrough, dovish Fed pivot, or unexpected economic stimulus could rapidly restore investor confidence, drive a relief rally, and reignite momentum in AI and tech stocks, especially if earnings or guidance exceed expectations.",
+  "bear_argument": "A major escalation in the Middle East, new export controls, or a significant cyber or regulatory event could trigger sharp downside, with institutional hedging and options activity signaling persistent anxiety about tail risks and downside volatility.",
+  "wildcards": [
+    "Major military incident or escalation in the Middle East",
+    "Sudden, aggressive regulatory action targeting big tech or AI exports",
+    "Large-scale cyberattack on financial infrastructure",
+    "Unexpected central bank policy shift",
+    "Trump or other political figure making a market-moving statement",
+    "AWS or major cloud outage",
+    "Black market scandal involving chip exports"
+  ],
+  "agent_consensus": 0.45,
+  "date_generated": "2026-03-29",
+  "horizon": "t1",
+  "target_date": "2026-03-30",
+  "extraction_method": "llm"
+}

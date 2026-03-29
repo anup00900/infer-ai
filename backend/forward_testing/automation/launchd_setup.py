@@ -133,7 +133,12 @@ def install_cron(project_dir: str = None):
     if project_dir is None:
         project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-    python_path = sys.executable
+    # Use .venv Python 3.12 (has camel-ai, oasis, azure openai)
+    venv_python = os.path.join(project_dir, "backend", ".venv", "bin", "python3.12")
+    if os.path.exists(venv_python):
+        python_path = venv_python
+    else:
+        python_path = sys.executable
     os.makedirs(PLIST_DIR, exist_ok=True)
 
     for job_name, job_config in JOBS.items():

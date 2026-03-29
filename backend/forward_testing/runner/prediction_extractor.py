@@ -53,7 +53,10 @@ def _try_llm_extraction(
     try:
         from openai import AzureOpenAI
         from dotenv import load_dotenv
-        load_dotenv()
+        # Load .env from project root
+        env_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "..", ".env")
+        load_dotenv(env_path)
+        load_dotenv()  # Also try CWD
 
         client = AzureOpenAI(
             api_key=os.environ.get("AZURE_OPENAI_API_KEY"),
@@ -63,88 +66,29 @@ def _try_llm_extraction(
 
         deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4.1")
 
-        extraction_prompt = f"""You are a financial prediction extraction system. Extract structured predictions from this simulation report.
+        tickers_str = ", ".join(tickers)
+        extraction_prompt = f"""Extract predictions from this simulation report as JSON.
 
-Horizon: {horizon.upper()} | Run date: {run_date} | Target date: {target_date}
-Tickers: {', '.join(tickers)}
+Run date: {run_date} | Target: {target_date} | Horizon: {horizon.upper()}
+Tickers: {tickers_str}
 
-Return ONLY valid JSON with this exact structure:
-{{
-    "date_generated": "{run_date}",
-    "horizon": "{horizon}",
-    "target_date": "{target_date}",
-    "market_outlook": {{
-        "sp500": {{
-            "scenarios": [
-                {{"label": "bull", "probability": 0.25, "range": [low, high], "narrative": "..."}},
-                {{"label": "base", "probability": 0.45, "range": [low, high], "narrative": "..."}},
-                {{"label": "bear", "probability": 0.25, "range": [low, high], "narrative": "..."}},
-                {{"label": "tail_risk", "probability": 0.05, "range": [low, high], "narrative": "..."}}
-            ],
-            "key_uncertainties": ["...", "..."]
-        }},
-        "vix": {{
-            "scenarios": [
-                {{"label": "compression", "probability": 0.3, "range": [low, high], "driver": "..."}},
-                {{"label": "elevated", "probability": 0.45, "range": [low, high], "driver": "..."}},
-                {{"label": "spike", "probability": 0.25, "range": [low, high], "driver": "..."}}
-            ]
-        }}
-    }},
-    "macro_outlook": {{
-        "oil_brent": {{
-            "scenarios": [
-                {{"label": "decline", "probability": 0.2, "range": [low, high], "narrative": "..."}},
-                {{"label": "stable", "probability": 0.5, "range": [low, high], "narrative": "..."}},
-                {{"label": "escalation", "probability": 0.25, "range": [low, high], "narrative": "..."}},
-                {{"label": "crisis", "probability": 0.05, "range": [low, high], "narrative": "..."}}
-            ]
-        }},
-        "gold": {{
-            "scenarios": [{{"label": "...", "probability": 0.0, "range": [low, high], "narrative": "..."}}]
-        }},
-        "treasury_10y": {{
-            "scenarios": [{{"label": "...", "probability": 0.0, "range": [low, high], "narrative": "..."}}]
-        }}
-    }},
-    "ticker_outlook": [
-        {{
-            "ticker": "NVDA",
-            "scenarios": [
-                {{"label": "outperform", "probability": 0.4, "narrative": "..."}},
-                {{"label": "inline", "probability": 0.4, "narrative": "..."}},
-                {{"label": "underperform", "probability": 0.2, "narrative": "..."}}
-            ],
-            "key_catalysts": ["...", "..."],
-            "agent_sentiment_distribution": {{
-                "strongly_bullish": 0.0, "bullish": 0.0, "neutral": 0.0,
-                "bearish": 0.0, "strongly_bearish": 0.0
-            }}
-        }}
-    ],
-    "narrative_prediction": {{
-        "current_dominant_narrative": "...",
-        "predicted_narrative_shift": {{
-            "most_likely": {{"probability": 0.0, "narrative": "...", "trigger": "..."}},
-            "alternative_1": {{"probability": 0.0, "narrative": "...", "trigger": "..."}},
-            "alternative_2": {{"probability": 0.0, "narrative": "...", "trigger": "..."}}
-        }},
-        "wildcards": ["...", "..."]
-    }},
-    "agent_debate_summary": {{
-        "total_agents": 0,
-        "consensus_level": 0.0,
-        "bull_camp": {{"percentage": 0.0, "core_argument": "..."}},
-        "bear_camp": {{"percentage": 0.0, "core_argument": "..."}},
-        "neutral_camp": {{"percentage": 0.0, "core_argument": "..."}},
-        "most_heated_debates": ["...", "..."]
-    }}
-}}
+Return ONLY a JSON object (no markdown, no explanation) with these keys:
+- "sp500_scenarios": object with "bull", "base", "bear", "tail" keys, each having "probability" (decimal 0-1), "narrative" (string)
+- "oil_outlook": string describing oil price direction and reasoning
+- "gold_outlook": string describing gold direction
+- "vix_outlook": string describing volatility outlook
+- "ticker_outlook": object where each key is a ticker symbol, value has "bull_probability" (decimal), "bear_probability" (decimal), "sentiment" (string), "key_driver" (string)
+- "dominant_narrative": string describing the main market story
+- "narrative_shift": string describing how the narrative might change
+- "bull_argument": string — strongest bull case
+- "bear_argument": string — strongest bear case
+- "wildcards": array of strings — events that could change everything
+- "agent_consensus": decimal 0-1, how much agents agree (0=divided, 1=unanimous)
 
-Extract ALL values from the report. For probabilities, infer from the language used (e.g., "most likely" = 0.4-0.6, "unlikely" = 0.1-0.2). For ranges, use specific numbers mentioned in the report.
+Use decimal probabilities (0.25 not "25%"). Extract real values from the report, not placeholders.
 
 REPORT:
-{report_md}"""
+{report_md[:15000]}"""
 
         response = client.chat.completions.create(
             model=deployment,
@@ -158,8 +102,16 @@ REPORT:
         json_match = re.search(r'```json\s*(.*?)\s*```', content, re.DOTALL)
         if json_match:
             content = json_match.group(1)
+        # Try to find JSON object in response
+        if not content.strip().startswith("{"):
+            obj_match = re.search(r'\{.*\}', content, re.DOTALL)
+            if obj_match:
+                content = obj_match.group(0)
 
         prediction = json.loads(content)
+        prediction["date_generated"] = run_date
+        prediction["horizon"] = horizon
+        prediction["target_date"] = target_date
         prediction["extraction_method"] = "llm"
         return prediction
 

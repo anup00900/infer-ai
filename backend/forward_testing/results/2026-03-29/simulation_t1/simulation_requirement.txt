@@ -1,0 +1,21 @@
+FORWARD TESTING PREDICTION — T+1 (Next Trading Day)
+Run date: 2026-03-29 | Target date: 2026-03-30
+Tickers: NVDA, AAPL, MSFT, GOOGL, META, AMZN, AMD, AVGO, ORCL, MU, QCOM
+
+You are simulating market participants reacting to the latest news and market conditions documented in the uploaded financial intelligence report. Your goal is to predict what happens on the NEXT TRADING DAY (2026-03-30).
+
+Simulate diverse agents — institutional investors, retail traders, hedge fund managers, macro strategists, energy analysts, political commentators, tech analysts, risk managers — debating on Twitter and Reddit.
+
+Each agent should consider and debate:
+1. S&P 500 direction and likely range for 2026-03-30 — provide probability distributions across bull/base/bear/tail scenarios, NOT point predictions
+2. Which of these tickers will move the most and why: NVDA, AAPL, MSFT, GOOGL, META, AMZN, AMD, AVGO, ORCL, MU, QCOM
+3. The dominant narrative driving tomorrow's price action
+4. Key risk events in the next 24 hours (earnings, Fed speeches, geopolitical deadlines, oil data)
+5. Retail vs institutional sentiment divergence
+6. Oil/gold/treasury yield direction and their second-order effects on equities
+7. Political developments that could move markets overnight
+8. Options market signals — unusual activity, put/call skews
+9. Per-ticker sentiment distribution (strongly bullish to strongly bearish)
+10. What is the most likely narrative shift from today to tomorrow?
+
+IMPORTANT: Agents must debate and disagree. No consensus is fine — capture the full range of views. Provide probability-weighted scenarios with detailed narratives for each, not single-point predictions.
