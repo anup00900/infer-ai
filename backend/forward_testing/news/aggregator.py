@@ -77,8 +77,16 @@ class NewsAggregator:
             logger.warning(f"YahooFinance market snapshot fetch failed: {e}")
             market_snapshot = None
 
-        # Deduplicate and group
+        # Deduplicate
         deduped_items = self._deduplicate(raw_items)
+
+        # Scrape full article text for top items
+        try:
+            from forward_testing.news.article_scraper import enrich_with_full_text
+            deduped_items = enrich_with_full_text(deduped_items, max_workers=10, max_articles=80)
+        except Exception as e:
+            logger.warning(f"Article scraping failed (continuing with headlines): {e}")
+
         grouped = self._group_by_category(deduped_items)
 
         logger.info(
@@ -131,7 +139,7 @@ class NewsAggregator:
             raise TypeError(f"Object of type {type(obj)} is not JSON serializable")
 
         def _item_to_dict(item: NewsItem) -> dict:
-            return {
+            d = {
                 "title": item.title,
                 "summary": item.summary,
                 "source": item.source,
@@ -140,6 +148,9 @@ class NewsAggregator:
                 "published_at": item.published_at.isoformat() if item.published_at else None,
                 "ticker": item.ticker,
             }
+            if item.full_text:
+                d["full_text"] = item.full_text
+            return d
 
         def _price_to_dict(p: PriceData) -> dict:
             return {

@@ -214,6 +214,15 @@ class MDFormatter:
             for item in items:
                 tag = _tag(item)
                 lines.append(f"- **[{tag}]** {item.title}")
+                # Include full article text if available
+                if item.full_text:
+                    # Indent the full text as a blockquote, truncate to 2000 chars
+                    body = item.full_text[:2000].strip()
+                    for para in body.split("\n\n"):
+                        para = para.strip()
+                        if para:
+                            lines.append(f"  > {para}")
+                    lines.append("")
 
         return "\n".join(lines)
 
@@ -240,10 +249,17 @@ class MDFormatter:
             lines.append("*(no ticker updates)*")
         else:
             for ticker in ordered_tickers:
-                headlines = "; ".join(
-                    item.title for item in ticker_items[ticker][:3]
-                )
-                lines.append(f"**{ticker}:** {headlines}")
+                top_items = ticker_items[ticker][:3]
+                lines.append(f"**{ticker}:**")
+                for item in top_items:
+                    lines.append(f"- {item.title}")
+                    if item.full_text:
+                        body = item.full_text[:1500].strip()
+                        for para in body.split("\n\n"):
+                            para = para.strip()
+                            if para:
+                                lines.append(f"  > {para}")
+                lines.append("")
 
         return "\n".join(lines)
 

@@ -14,6 +14,7 @@ class NewsItem:
     published_at: datetime
     ticker: Optional[str] = None
     raw_data: Optional[dict] = None
+    full_text: Optional[str] = None  # Full article body when scraped
 
     def dedup_key(self) -> str:
         normalized = self.title.lower().strip()
