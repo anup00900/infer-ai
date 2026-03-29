@@ -179,6 +179,7 @@ class SimulationRunner:
                 "platform": "parallel",
                 "max_rounds": max_rounds,
                 "enable_graph_memory_update": True,
+                "force": True,
             },
             timeout=self.timeout
         )
