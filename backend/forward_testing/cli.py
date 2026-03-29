@@ -102,12 +102,17 @@ def cmd_status(config, args):
 
 def main():
     parser = argparse.ArgumentParser(description="Infer Forward Testing Pipeline")
-    parser.add_argument("--date", help="Override date (YYYY-MM-DD)")
     subparsers = parser.add_subparsers(dest="command", required=True)
+
     init_parser = subparsers.add_parser("init", help="Initialize live seed file")
     init_parser.add_argument("--original", help="Path to original seed MD file")
-    subparsers.add_parser("fetch-prices", help="Fetch market close prices")
-    subparsers.add_parser("fetch-news", help="Fetch news and append to seed")
+
+    prices_parser = subparsers.add_parser("fetch-prices", help="Fetch market close prices")
+    prices_parser.add_argument("--date", help="Override date (YYYY-MM-DD)")
+
+    news_parser = subparsers.add_parser("fetch-news", help="Fetch news and append to seed")
+    news_parser.add_argument("--date", help="Override date (YYYY-MM-DD)")
+
     subparsers.add_parser("status", help="Show pipeline status")
     args = parser.parse_args()
     config = ForwardTestingConfig()
