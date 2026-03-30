@@ -1,0 +1,109 @@
+{
+  "sp500_scenarios": {
+    "bull": {
+      "probability": 0.15,
+      "narrative": "A sharp rally would require unexpectedly dovish policy or major de-escalation in conflict zones. Resilient tech sector earnings and robust institutional frameworks provide optimism."
+    },
+    "base": {
+      "probability": 0.6,
+      "narrative": "Most agents expect continued volatility with no clear direction. The S&P 500 is likely to be range-bound or see modest upward movement, supported by resilient earnings and the absence of major negative surprises."
+    },
+    "bear": {
+      "probability": 0.25,
+      "narrative": "Significant risk if geopolitical or policy shocks materialize. Downside risk is tied to negative inflation surprises, geopolitical shocks, or cyber events."
+    },
+    "tail": {
+      "probability": 0.1,
+      "narrative": "The probability of extreme negative scenarios is elevated. A 'black swan' event—such as a catastrophic cyberattack, major sovereign default, or direct military confrontation—could trigger rapid systemic repricing."
+    }
+  },
+  "oil_outlook": "Oil prices are expected to remain high and volatile, with a 60% probability of staying in the $100–110 range. There is a 15–20% chance of a spike above $120/bbl if Middle East escalation or supply shocks occur, and a 20% chance of a downside move if OPEC or the US intervene. Scenario dispersion is extreme, driven by geopolitical risk and supply chain disruptions.",
+  "gold_outlook": "Gold is expected to stay firm or rise modestly (55–65% probability) as a flight-to-safety asset. There is a 25% chance of a sharp rally if risk-off, cyber, or geopolitical shocks materialize, and a small chance of a pullback if rates spike or risk appetite returns.",
+  "vix_outlook": "Volatility is expected to remain elevated and reactive to macro, geopolitical, and cyber headlines. Agents anticipate narrative-driven spikes in VIX, with hedging activity increasing in response to ongoing uncertainty and the potential for sudden shocks.",
+  "ticker_outlook": {
+    "NVDA": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.2,
+      "sentiment": "Choppy, high risk",
+      "key_driver": "Export controls, US/China tensions, regulatory headlines"
+    },
+    "AAPL": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.2,
+      "sentiment": "Mixed, cautious",
+      "key_driver": "Supply chain news, regulatory moves"
+    },
+    "MSFT": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.25,
+      "sentiment": "Under pressure",
+      "key_driver": "AI transition costs, sector rotation"
+    },
+    "GOOGL": {
+      "bull_probability": 0.18,
+      "bear_probability": 0.27,
+      "sentiment": "Negative bias, volatile",
+      "key_driver": "Regulatory scrutiny, antitrust news, AI monetization"
+    },
+    "META": {
+      "bull_probability": 0.22,
+      "bear_probability": 0.23,
+      "sentiment": "Cautious, proof demanded",
+      "key_driver": "Llama/Meta AI monetization, hardware revenue"
+    },
+    "AMZN": {
+      "bull_probability": 0.23,
+      "bear_probability": 0.2,
+      "sentiment": "Neutral, sensitive",
+      "key_driver": "AWS growth, regulatory risk, sector rotation"
+    },
+    "AMD": {
+      "bull_probability": 0.21,
+      "bear_probability": 0.22,
+      "sentiment": "Headline-driven",
+      "key_driver": "Export controls, AI chip policy"
+    },
+    "AVGO": {
+      "bull_probability": 0.24,
+      "bear_probability": 0.19,
+      "sentiment": "Watching for catalysts",
+      "key_driver": "Hyperscaler capex, AI hardware orders"
+    },
+    "ORCL": {
+      "bull_probability": 0.22,
+      "bear_probability": 0.23,
+      "sentiment": "Debated, mixed",
+      "key_driver": "AI debt, cloud momentum"
+    },
+    "MU": {
+      "bull_probability": 0.23,
+      "bear_probability": 0.22,
+      "sentiment": "Mixed, bifurcated",
+      "key_driver": "Read-through from Alphabet earnings, memory cycle"
+    },
+    "QCOM": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.23,
+      "sentiment": "Cautious, headline-sensitive",
+      "key_driver": "AI smartphone cycle, China regulatory news"
+    }
+  },
+  "dominant_narrative": "The main market story is one of vigilance and contingency, shaped by macroeconomic uncertainty, persistent geopolitical risk, and the rising salience of cyber threats. Market participants are focused on macro data, central bank signals, and the potential for sudden shocks from conflict zones or digital infrastructure failures.",
+  "narrative_shift": "The narrative could shift rapidly if a major cyber incident, abrupt policy change, or sudden de-escalation in a conflict zone occurs. Integration of cyber risk into mainstream market sentiment is increasing, and any major diplomatic breakthrough or escalation could quickly alter scenario probabilities.",
+  "bull_argument": "Resilient tech sector earnings, ongoing digital transformation, and robust institutional frameworks could drive a rally if macro data surprises positively and geopolitical tensions ease. A dovish central bank pivot or rapid de-escalation in conflict zones would further support risk assets.",
+  "bear_argument": "Persistent geopolitical uncertainty, energy price volatility, and the threat of sudden policy changes or cyberattacks could trigger sharp downside moves. The risk of abrupt shocks in critical infrastructure or supply chains remains high, and tail risks are elevated.",
+  "wildcards": [
+    "Catastrophic cyberattack disrupting global payment networks",
+    "Major sovereign default",
+    "Direct military confrontation between nuclear powers",
+    "Sudden escalation in the Middle East or Eastern Europe",
+    "Unexpected central bank policy shift",
+    "Major regulatory intervention in tech sector",
+    "Breakthrough diplomatic agreement in a conflict zone"
+  ],
+  "agent_consensus": 0.65,
+  "date_generated": "2026-03-29",
+  "horizon": "t7",
+  "target_date": "2026-04-07",
+  "extraction_method": "llm"
+}

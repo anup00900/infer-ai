@@ -1,0 +1,109 @@
+{
+  "sp500_scenarios": {
+    "bull": {
+      "probability": 0.2,
+      "narrative": "S&P 500 rallies 1–2%+, driven by persistent tech/AI momentum, resilient earnings, and positive macro or geopolitical surprises. Retail and institutional flows chase upside if AI/semiconductor headlines dominate and volatility subsides."
+    },
+    "base": {
+      "probability": 0.55,
+      "narrative": "S&P 500 remains flat or moves modestly (±1%), reflecting a cautiously optimistic consensus amid ongoing macro, Fed, and geopolitical uncertainty. Defensive and tech sectors both attract flows as investors hedge bets and await new catalysts."
+    },
+    "bear": {
+      "probability": 0.22,
+      "narrative": "S&P 500 drops 1–2%+, triggered by negative macro surprises, energy/geopolitical shocks (especially oil), or disappointing earnings. Defensive sectors outperform as risk appetite wanes and volatility rises."
+    },
+    "tail": {
+      "probability": 0.05,
+      "narrative": "S&P 500 moves more than 2% (crash or melt-up), driven by meme/retail squeezes, major geopolitical escalation (e.g., Iran war, Strait of Hormuz), sudden Fed action, or regulatory shocks in AI/semiconductors."
+    }
+  },
+  "oil_outlook": "Oil prices are expected to remain elevated or trend higher due to ongoing geopolitical tensions in the Middle East, particularly the Iran conflict and G7's Hormuz push. Supply chain disruptions and potential for further escalation keep energy markets on edge, with upside risk if wildcards materialize.",
+  "gold_outlook": "Gold is likely to see upward pressure as investors seek safe havens amid persistent macro/geopolitical uncertainty and volatility. Defensive flows into gold are supported by inflation concerns and headline risk.",
+  "vix_outlook": "Volatility is expected to remain elevated, with the VIX staying bid as narrative volatility, headline-driven swings, and wildcards (geopolitical, Fed, regulatory) keep traders on edge. Consensus is that volatility will persist through the period.",
+  "ticker_outlook": {
+    "NVDA": {
+      "bull_probability": 0.3,
+      "bear_probability": 0.25,
+      "sentiment": "polarized, high conviction on both sides",
+      "key_driver": "AI/semiconductor demand, export controls, regulatory headlines"
+    },
+    "AAPL": {
+      "bull_probability": 0.22,
+      "bear_probability": 0.18,
+      "sentiment": "neutral to modestly positive",
+      "key_driver": "AI strategy, product cycle, defensive tech flows"
+    },
+    "MSFT": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.22,
+      "sentiment": "mixed, cautious",
+      "key_driver": "AI integration, earnings momentum, sector rotation"
+    },
+    "GOOGL": {
+      "bull_probability": 0.23,
+      "bear_probability": 0.17,
+      "sentiment": "modestly positive",
+      "key_driver": "AI/advertising growth, tech sector flows"
+    },
+    "META": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.2,
+      "sentiment": "cautiously optimistic",
+      "key_driver": "AI monetization, earnings, product innovation"
+    },
+    "AMZN": {
+      "bull_probability": 0.21,
+      "bear_probability": 0.23,
+      "sentiment": "mixed, slightly cautious",
+      "key_driver": "AI/cloud spending, consumer demand, margin concerns"
+    },
+    "AMD": {
+      "bull_probability": 0.28,
+      "bear_probability": 0.24,
+      "sentiment": "polarized, high risk/reward",
+      "key_driver": "AI chip demand, export controls, valuation"
+    },
+    "AVGO": {
+      "bull_probability": 0.24,
+      "bear_probability": 0.18,
+      "sentiment": "positive, quality compounder",
+      "key_driver": "AI/semiconductor exposure, earnings quality"
+    },
+    "ORCL": {
+      "bull_probability": 0.22,
+      "bear_probability": 0.16,
+      "sentiment": "modestly positive",
+      "key_driver": "cloud/AI adoption, enterprise demand"
+    },
+    "MU": {
+      "bull_probability": 0.27,
+      "bear_probability": 0.2,
+      "sentiment": "asymmetric upside",
+      "key_driver": "AI-driven memory demand, valuation"
+    },
+    "QCOM": {
+      "bull_probability": 0.23,
+      "bear_probability": 0.19,
+      "sentiment": "neutral to positive",
+      "key_driver": "AI/mobile chip demand, sector flows"
+    }
+  },
+  "dominant_narrative": "The market is defined by deep polarization and narrative volatility, with defensive positioning and AI/semiconductor momentum vying for leadership. Macro, Fed, and geopolitical catalysts drive rapid shifts in sentiment, while wildcards threaten to upend any prevailing scenario.",
+  "narrative_shift": "A major geopolitical escalation, regulatory shock in AI/semiconductors, or unexpected Fed action could rapidly shift the narrative from cautious optimism to risk-off panic, or vice versa if tensions ease or tech/AI headlines surprise to the upside.",
+  "bull_argument": "AI and semiconductor innovation continue to drive robust earnings and productivity gains, attracting institutional and retail flows. If macro data stabilizes and geopolitical risks do not escalate, tech leadership could resume, fueling further upside.",
+  "bear_argument": "Elevated valuations in tech, persistent macro/geopolitical risks (especially oil shocks), and the potential for regulatory or Fed surprises create significant downside risk. Defensive sectors may outperform as volatility rises and risk appetite fades.",
+  "wildcards": [
+    "Escalation or de-escalation in the Middle East/Iran war impacting oil supply",
+    "Sudden AI or semiconductor regulatory shocks (export controls, data privacy laws)",
+    "Viral meme-stock or retail-driven squeeze in a high-beta name",
+    "Unexpected Fed action or inflation data surprise",
+    "Major AI/tech leak or cybersecurity incident",
+    "Large-scale energy market intervention (e.g., IEA releasing reserves)",
+    "Political headline shocks (e.g., Trump social media post, sanctions)"
+  ],
+  "agent_consensus": 0.45,
+  "date_generated": "2026-03-29",
+  "horizon": "t3",
+  "target_date": "2026-04-01",
+  "extraction_method": "llm"
+}

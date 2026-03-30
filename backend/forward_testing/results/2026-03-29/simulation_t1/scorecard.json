@@ -1,0 +1,111 @@
+{
+  "prediction_date": "2026-03-29",
+  "horizon": "t1",
+  "target_date": "2026-03-30",
+  "scored_at": "2026-03-30T20:40:09.658443+00:00",
+  "market_score": {
+    "sp500_actual": 6376.39,
+    "sp500_change_pct": 0.12,
+    "predicted_direction": "down",
+    "direction_correct": false,
+    "bull_probability": 0.225,
+    "base_probability": 0.475,
+    "bear_probability": 0.225
+  },
+  "ticker_scores": [
+    {
+      "ticker": "NVDA",
+      "predicted_direction": "up",
+      "bull_probability": 0.3,
+      "bear_probability": 0.25,
+      "actual_change_pct": -0.58,
+      "direction_correct": false
+    },
+    {
+      "ticker": "AAPL",
+      "predicted_direction": "up",
+      "bull_probability": 0.25,
+      "bear_probability": 0.2,
+      "actual_change_pct": -0.47,
+      "direction_correct": false
+    },
+    {
+      "ticker": "MSFT",
+      "predicted_direction": "down",
+      "bull_probability": 0.2,
+      "bear_probability": 0.25,
+      "actual_change_pct": 1.1,
+      "direction_correct": false
+    },
+    {
+      "ticker": "GOOGL",
+      "predicted_direction": "up",
+      "bull_probability": 0,
+      "bear_probability": 0,
+      "actual_change_pct": -0.19,
+      "direction_correct": false
+    },
+    {
+      "ticker": "META",
+      "predicted_direction": "down",
+      "bull_probability": 0.2,
+      "bear_probability": 0.3,
+      "actual_change_pct": 1.18,
+      "direction_correct": false
+    },
+    {
+      "ticker": "AMZN",
+      "predicted_direction": "up",
+      "bull_probability": 0.2,
+      "bear_probability": 0.2,
+      "actual_change_pct": 1.13,
+      "direction_correct": true
+    },
+    {
+      "ticker": "AMD",
+      "predicted_direction": "up",
+      "bull_probability": 0.25,
+      "bear_probability": 0.25,
+      "actual_change_pct": 0.44,
+      "direction_correct": true
+    },
+    {
+      "ticker": "AVGO",
+      "predicted_direction": "up",
+      "bull_probability": 0.25,
+      "bear_probability": 0.2,
+      "actual_change_pct": -1.95,
+      "direction_correct": false
+    },
+    {
+      "ticker": "ORCL",
+      "predicted_direction": "down",
+      "bull_probability": 0.15,
+      "bear_probability": 0.2,
+      "actual_change_pct": -0.93,
+      "direction_correct": true
+    },
+    {
+      "ticker": "MU",
+      "predicted_direction": "up",
+      "bull_probability": 0.2,
+      "bear_probability": 0.2,
+      "actual_change_pct": -3.96,
+      "direction_correct": false
+    },
+    {
+      "ticker": "QCOM",
+      "predicted_direction": "up",
+      "bull_probability": 0.2,
+      "bear_probability": 0.2,
+      "actual_change_pct": 0.46,
+      "direction_correct": true
+    }
+  ],
+  "macro_scores": {},
+  "summary": {
+    "ticker_direction_accuracy": 0.364,
+    "sp500_scenario_hit": null,
+    "sp500_highest_prob_correct": null
+  }
+}

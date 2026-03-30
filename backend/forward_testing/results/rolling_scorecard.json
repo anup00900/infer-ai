@@ -1,5 +1,9 @@
 {
-  "as_of": "2026-03-29T14:25:00.466328+00:00",
-  "total_predictions": 0,
-  "message": "No scored predictions yet"
+  "as_of": "2026-03-30T20:40:09.659425+00:00",
+  "total_predictions": 1,
+  "t1_accuracy": {
+    "count": 1,
+    "avg_ticker_direction_accuracy": 0.364,
+    "sp500_highest_prob_correct_rate": 0.0
+  }
 }

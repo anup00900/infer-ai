@@ -1,0 +1,23 @@
+FORWARD TESTING PREDICTION — T+7 (7 Trading Days Out)
+Run date: 2026-03-29 | Target date: 2026-04-07
+Tickers: NVDA, AAPL, MSFT, GOOGL, META, AMZN, AMD, AVGO, ORCL, MU, QCOM
+
+You are simulating market participants analyzing the broader market trajectory over the next 7 trading days through 2026-04-07. Use the uploaded financial intelligence report as your comprehensive information base.
+
+Simulate diverse agents — institutional investors, retail traders, hedge fund managers, macro strategists, energy analysts, geopolitical experts, political commentators, tech analysts, risk managers, central bank watchers — debating on Twitter and Reddit.
+
+Each agent should consider and debate:
+1. Macro regime — are we shifting from the current state? Is the market repricing growth, inflation, or risk?
+2. S&P 500 range and probability distribution across scenarios: bull (probability, range, narrative), base (probability, range, narrative), bear (probability, range, narrative), tail risk (probability, range, narrative)
+3. Narrative prediction — what will be the DOMINANT market story 7 days from now? Predict narrative shifts.
+4. Oil/gold/treasury yield/dollar direction with probability-weighted scenarios and second-order effects
+5. Per-ticker outlook with catalyst calendar for the 7-day window: NVDA, AAPL, MSFT, GOOGL, META, AMZN, AMD, AVGO, ORCL, MU, QCOM
+6. Political developments that could change the trajectory (Fed Chair nomination, Congressional action, diplomatic moves)
+7. Sentiment cascade risk — what could trigger a sharp 3%+ move in either direction?
+8. Earnings calendar impact — any major reports due in the window?
+9. Agent debate summary — what are the strongest bull and bear arguments?
+10. Consensus level — how aligned or divided are market participants?
+11. What would it take for the tail risk scenario to materialize?
+12. Probability-weighted prediction for each major asset class
+
+IMPORTANT: This is a 7-day window — there is genuine uncertainty. Reflect that in wide scenario ranges and honest probability assessments. Agents must argue passionately for their views. No point predictions — only probability distributions with full narrative reasoning.

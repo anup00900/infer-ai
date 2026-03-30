@@ -28,32 +28,70 @@ def score_prediction(prediction_path: str, actuals_path: str, output_path: str) 
         "scored_at": datetime.now(timezone.utc).isoformat(),
     }
 
-    # Score S&P 500
+    # Score S&P 500 — handle both LLM format (sp500_scenarios dict) and old format (market_outlook.sp500.scenarios list)
     sp500_actual = actuals.get("market", {}).get("sp500", {}).get("close")
-    if sp500_actual and "market_outlook" in prediction:
-        sp_scenarios = prediction["market_outlook"].get("sp500", {}).get("scenarios", [])
-        scorecard["market_score"] = _score_scenarios(sp_scenarios, sp500_actual, "sp500")
+    sp500_actual_change = actuals.get("market", {}).get("sp500", {}).get("change_pct", 0)
+    if sp500_actual:
+        sp_scenarios_raw = prediction.get("sp500_scenarios") or prediction.get("market_outlook", {}).get("sp500", {}).get("scenarios", [])
+        if isinstance(sp_scenarios_raw, dict):
+            # LLM format: {"bull": {"probability": 0.2, "narrative": "..."}, ...}
+            bull_prob = sp_scenarios_raw.get("bull", {}).get("probability", 0) or 0
+            bear_prob = sp_scenarios_raw.get("bear", {}).get("probability", 0) or 0
+            predicted_direction = "up" if bull_prob > bear_prob else "down"
+            actual_direction = "up" if sp500_actual_change > 0 else "down"
+            scorecard["market_score"] = {
+                "sp500_actual": sp500_actual,
+                "sp500_change_pct": sp500_actual_change,
+                "predicted_direction": predicted_direction,
+                "direction_correct": predicted_direction == actual_direction,
+                "bull_probability": bull_prob,
+                "base_probability": sp_scenarios_raw.get("base", {}).get("probability", 0) or 0,
+                "bear_probability": bear_prob,
+            }
+        elif isinstance(sp_scenarios_raw, list):
+            scorecard["market_score"] = _score_scenarios(sp_scenarios_raw, sp500_actual, "sp500")
 
-    # Score tickers
+    # Score tickers — handle both LLM format (dict of tickers) and old format (list of dicts)
     ticker_scores = []
-    for ticker_pred in prediction.get("ticker_outlook", []):
-        ticker = ticker_pred.get("ticker")
-        actual = actuals.get("tickers", {}).get(ticker, {})
-        if actual:
-            actual_change = actual.get("change_pct", 0)
-            scenarios = ticker_pred.get("scenarios", [])
-            # Find highest probability scenario
-            if scenarios:
-                top_scenario = max(scenarios, key=lambda s: s.get("probability", 0))
-                predicted_direction = "up" if top_scenario["label"] in ("outperform", "bull") else "down"
+    ticker_outlook = prediction.get("ticker_outlook", {})
+    if isinstance(ticker_outlook, dict):
+        # LLM format: {"NVDA": {"bull_probability": 0.3, "bear_probability": 0.25, ...}, ...}
+        for ticker, pred_data in ticker_outlook.items():
+            if not isinstance(pred_data, dict):
+                continue
+            actual = actuals.get("tickers", {}).get(ticker, {})
+            if actual:
+                bull_p = pred_data.get("bull_probability", 0) or 0
+                bear_p = pred_data.get("bear_probability", 0) or 0
+                predicted_direction = "up" if bull_p >= bear_p else "down"
+                actual_change = actual.get("change_pct", 0)
                 actual_direction = "up" if actual_change > 0 else "down"
                 ticker_scores.append({
                     "ticker": ticker,
                     "predicted_direction": predicted_direction,
-                    "predicted_probability": top_scenario.get("probability", 0),
+                    "bull_probability": bull_p,
+                    "bear_probability": bear_p,
                     "actual_change_pct": actual_change,
                     "direction_correct": predicted_direction == actual_direction,
                 })
+    elif isinstance(ticker_outlook, list):
+        for ticker_pred in ticker_outlook:
+            ticker = ticker_pred.get("ticker")
+            actual = actuals.get("tickers", {}).get(ticker, {})
+            if actual:
+                actual_change = actual.get("change_pct", 0)
+                scenarios = ticker_pred.get("scenarios", [])
+                if scenarios:
+                    top_scenario = max(scenarios, key=lambda s: s.get("probability", 0))
+                    predicted_direction = "up" if top_scenario["label"] in ("outperform", "bull") else "down"
+                    actual_direction = "up" if actual_change > 0 else "down"
+                    ticker_scores.append({
+                        "ticker": ticker,
+                        "predicted_direction": predicted_direction,
+                        "predicted_probability": top_scenario.get("probability", 0),
+                        "actual_change_pct": actual_change,
+                        "direction_correct": predicted_direction == actual_direction,
+                    })
     scorecard["ticker_scores"] = ticker_scores
 
     # Score macro
