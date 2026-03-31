@@ -11,17 +11,18 @@ PLIST_DIR = os.path.expanduser("~/Library/LaunchAgents")
 PLIST_PREFIX = "com.infer.forward-testing"
 
 # Three jobs:
-# 1. fetch-prices at 6:00 PM (18:00) — market close data + score matured predictions
+# Schedule (UAE time):
+# 1. score-predictions at 2:00 AM — fetch prices from yesterday's close + score matured predictions
 # 2. fetch-news at 11:00 PM (23:00) — aggregate all news sources
 # 3. run-simulations at 11:30 PM (23:30) — run T+1, T+3, T+7 simulations
 
 JOBS = {
-    "fetch-prices": {
-        "hour": 18,
+    "score-predictions": {
+        "hour": 2,
         "minute": 0,
         "cli_command": "run-pipeline",
         "cli_args": ["--phase", "prices"],
-        "label": f"{PLIST_PREFIX}.fetch-prices",
+        "label": f"{PLIST_PREFIX}.score-predictions",
     },
     "fetch-news": {
         "hour": 23,

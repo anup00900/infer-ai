@@ -1,0 +1,108 @@
+{
+  "sp500_scenarios": {
+    "bull": {
+      "probability": 0.25,
+      "narrative": "Driven by positive earnings surprises, dovish Fed commentary, or de-escalation in geopolitical hotspots. Institutional voices see this as possible but contingent on 'no adverse surprises overnight.'"
+    },
+    "base": {
+      "probability": 0.45,
+      "narrative": "Sideways or mildly positive action, reflecting a 'market delicately balanced' between opposing macro and geopolitical forces. Most likely outcome is cautious range-trading, but volatility risk remains elevated."
+    },
+    "bear": {
+      "probability": 0.25,
+      "narrative": "Triggered by negative inflation surprises, hawkish central bank rhetoric, or new geopolitical escalations. Elevated probability for sharp movements in either direction due to recent volatility sparked by central bank policy shifts and global economic uncertainties."
+    },
+    "tail": {
+      "probability": 0.05,
+      "narrative": "A dramatic move, up or down, resulting from an unforeseen shock—such as a major cyberattack, sudden escalation in the Middle East, or surprise Fed action. Ripple effects of international incidents can have significant, and sometimes underestimated, impacts on market stability."
+    }
+  },
+  "oil_outlook": "Oil prices are expected to remain elevated or trend higher due to ongoing supply chain fragility and geopolitical risks, with the surge in fuel prices cited as an underappreciated risk that could tip the market. If Brent averages $140/bbl for two months, recession-level drag on global GDP is possible.",
+  "gold_outlook": "Gold is likely to trend higher as investors seek safe havens amid heightened volatility, geopolitical risk, and uncertainty around central bank policy.",
+  "vix_outlook": "Volatility is expected to remain elevated, with options markets signaling high implied volatility, especially in tech and semiconductor names. Institutional hedging has increased, and the VIX is likely to reflect ongoing uncertainty and headline risk.",
+  "ticker_outlook": {
+    "NVDA": {
+      "bull_probability": 0.6,
+      "bear_probability": 0.3,
+      "sentiment": "Strongly bullish (retail), cautious/neutral (institutional)",
+      "key_driver": "AI growth, export policy shifts, options-driven volatility"
+    },
+    "AAPL": {
+      "bull_probability": 0.5,
+      "bear_probability": 0.3,
+      "sentiment": "Neutral to bullish (retail), cautious (institutional, supply chain risk)",
+      "key_driver": "AI product cycle, memory shortages, supply chain bottlenecks"
+    },
+    "MSFT": {
+      "bull_probability": 0.45,
+      "bear_probability": 0.4,
+      "sentiment": "Split—bullish (value), bearish (freefall fears)",
+      "key_driver": "Earnings momentum, AI revenue sustainability, options activity"
+    },
+    "GOOGL": {
+      "bull_probability": 0.5,
+      "bear_probability": 0.3,
+      "sentiment": "Neutral to bullish (sector rotation, AI infrastructure)",
+      "key_driver": "AI infrastructure demand, sector rotation"
+    },
+    "META": {
+      "bull_probability": 0.55,
+      "bear_probability": 0.35,
+      "sentiment": "Bullish (AI hope), skeptical (revenue proof)",
+      "key_driver": "AI monetization, earnings momentum, options skews"
+    },
+    "AMZN": {
+      "bull_probability": 0.4,
+      "bear_probability": 0.45,
+      "sentiment": "Neutral to bearish (retail fatigue), cautious (institutional)",
+      "key_driver": "AI capex concerns, delayed payoff, options-driven moves"
+    },
+    "AMD": {
+      "bull_probability": 0.55,
+      "bear_probability": 0.35,
+      "sentiment": "Bullish (retail), cautious (institutional, export controls)",
+      "key_driver": "AI demand, export controls, memory shortages"
+    },
+    "AVGO": {
+      "bull_probability": 0.5,
+      "bear_probability": 0.25,
+      "sentiment": "Neutral to bullish (sector rotation, supply chain)",
+      "key_driver": "AI infrastructure, supply chain exposure"
+    },
+    "ORCL": {
+      "bull_probability": 0.45,
+      "bear_probability": 0.35,
+      "sentiment": "Neutral to bullish (AI investment), dividend risk",
+      "key_driver": "AI investment, dividend sustainability"
+    },
+    "MU": {
+      "bull_probability": 0.5,
+      "bear_probability": 0.4,
+      "sentiment": "Mixed, with volatility expected on supply and regulatory headlines",
+      "key_driver": "Memory shortages, supply chain, export controls"
+    },
+    "QCOM": {
+      "bull_probability": 0.5,
+      "bear_probability": 0.3,
+      "sentiment": "Neutral to bullish (sector rotation, supply chain)",
+      "key_driver": "Memory shortage, AI supply chain, sector rotation"
+    }
+  },
+  "dominant_narrative": "The dominant narrative is a tug-of-war between central bank policy, inflation, and geopolitical risk, with energy shocks and AI/tech outperformance as key swing factors. Market is delicately balanced, with volatility and headline risk elevated.",
+  "narrative_shift": "A pivot from broad AI euphoria to heightened scrutiny of supply chain vulnerabilities and regulatory risk, with options markets and social sentiment amplifying volatility in semis and megacaps. Headline risk and options-driven swings are expected to dominate intraday action.",
+  "bull_argument": "If central bank commentary remains dovish, inflation data surprises to the downside, and AI/tech earnings continue to beat expectations, the S&P 500 and leading tech names could rally sharply, with retail and institutional capital rotating into perceived 'generational buying opportunities' in quality stocks like NVDA, MSFT, and AMD.",
+  "bear_argument": "A negative inflation surprise, hawkish Fed rhetoric, or a major geopolitical escalation could trigger sharp downside, especially if energy prices spike further or supply chain disruptions worsen. Options markets are already signaling elevated event risk, and institutional hedging could amplify a selloff.",
+  "wildcards": [
+    "Surprise Fed speech or policy action",
+    "Major cyberattack on financial or energy infrastructure",
+    "Sudden escalation in the Middle East or Asia",
+    "Unexpected regulatory action on AI or chip exports",
+    "Large options-driven move in mega-cap tech",
+    "Supply chain shock (e.g., memory shortage, shipping disruption)"
+  ],
+  "agent_consensus": 0.55,
+  "date_generated": "2026-03-30",
+  "horizon": "t1",
+  "target_date": "2026-03-31",
+  "extraction_method": "llm"
+}
