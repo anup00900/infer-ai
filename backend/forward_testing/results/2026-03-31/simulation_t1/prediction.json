@@ -1,0 +1,109 @@
+{
+  "sp500_scenarios": {
+    "bull": {
+      "probability": 0.23,
+      "narrative": "Bullish scenario driven by tech outperformance, meme-stock optimism, and potential political catalysts such as a surprise Trump post or positive earnings momentum. Retail sentiment is resilient, and a rally could be triggered by a narrative shift or unexpected positive macro data."
+    },
+    "base": {
+      "probability": 0.45,
+      "narrative": "Base case reflects ongoing macro and policy uncertainty, with the S&P 500 trading sideways or modestly higher as investors weigh inflation, central bank signals, and sector rotation. Volatility remains elevated, but no decisive trend emerges as agents await further data."
+    },
+    "bear": {
+      "probability": 0.25,
+      "narrative": "Bearish scenario driven by renewed inflation fears, hawkish Fed signals, regulatory crackdowns, or geopolitical escalations. Institutional and macro agents highlight risks of forced position unwinds, elevated VIX, and the potential for a sharp drawdown if negative surprises materialize."
+    },
+    "tail": {
+      "probability": 0.07,
+      "narrative": "Tail risk scenario involves a major shock such as a severe geopolitical event (e.g., Hormuz closure), a surprise Fed hike, or a regulatory bombshell against Big Tech, resulting in a rapid, disorderly market decline and volatility spike."
+    }
+  },
+  "oil_outlook": "Oil prices are expected to trend higher due to geopolitical risk in the Middle East, specifically the risk of Hormuz Strait disruptions. Goldman Sachs raised its WTI and Brent forecasts, citing potential for Brent to exceed $147/bbl if Hormuz remains closed, with current expectations for elevated prices through April.",
+  "gold_outlook": "Gold is likely to remain bid or trend higher as investors seek safety amid inflation uncertainty, central bank policy ambiguity, and geopolitical tensions. Macro agents cite gold as a hedge against both inflation and tail risk.",
+  "vix_outlook": "Volatility is expected to remain elevated, with the VIX reflecting increased institutional hedging and macro uncertainty. Agents warn of potential for a volatility spike if there are negative surprises in inflation, employment data, or geopolitical developments.",
+  "ticker_outlook": {
+    "NVDA": {
+      "bull_probability": 0.45,
+      "bear_probability": 0.25,
+      "sentiment": "Polarized, with retail highly bullish on AI and meme momentum, institutions cautiously bullish but hedging for regulatory risk, and hedge funds neutral to bearish short-term.",
+      "key_driver": "AI leadership, regulatory risk (export controls), options activity, and earnings guidance."
+    },
+    "AAPL": {
+      "bull_probability": 0.38,
+      "bear_probability": 0.22,
+      "sentiment": "Moderately bullish, with retail focused on product cycle and brand strength, institutions neutral to slightly bullish, and hedge funds mixed due to sector rotation risk.",
+      "key_driver": "Product cycle, supply chain stability, macro factors (inflation, rates), and regulatory news."
+    },
+    "MSFT": {
+      "bull_probability": 0.4,
+      "bear_probability": 0.2,
+      "sentiment": "Bullish long-term on AI/cloud, but neutral short-term due to macro and regulatory event risk.",
+      "key_driver": "AI/cloud leadership, macro data releases, and regulatory developments."
+    },
+    "GOOGL": {
+      "bull_probability": 0.35,
+      "bear_probability": 0.28,
+      "sentiment": "Divergent; retail bullish on AI and ad rebound, institutions neutral and wary of regulatory action, hedge funds short-term bearish.",
+      "key_driver": "Regulatory/antitrust risk, AI innovation, digital ad demand."
+    },
+    "META": {
+      "bull_probability": 0.28,
+      "bear_probability": 0.4,
+      "sentiment": "Most negative among mega-cap tech; institutions and hedge funds bearish on regulatory and ad market risk, retail split between bottom-fishing and capitulation.",
+      "key_driver": "Regulatory risk, AI monetization, ad market trends."
+    },
+    "AMZN": {
+      "bull_probability": 0.36,
+      "bear_probability": 0.22,
+      "sentiment": "Retail bullish on e-commerce recovery, institutions neutral and cautious on consumer, hedge funds mixed.",
+      "key_driver": "Consumer spending data, cloud sector headlines, regulatory news."
+    },
+    "AMD": {
+      "bull_probability": 0.33,
+      "bear_probability": 0.32,
+      "sentiment": "Retail bullish on AI/gaming, institutions cautious on export controls and demand, hedge funds bearish on competition.",
+      "key_driver": "AI/gaming demand, export controls, competitive pressures."
+    },
+    "AVGO": {
+      "bull_probability": 0.32,
+      "bear_probability": 0.2,
+      "sentiment": "Retail bullish on dividend/infrastructure, institutions neutral/defensive, hedge funds neutral.",
+      "key_driver": "Semiconductor sector sentiment, macro news, trade policy."
+    },
+    "ORCL": {
+      "bull_probability": 0.3,
+      "bear_probability": 0.22,
+      "sentiment": "Retail more bullish than institutional; volatility driven by options and sector news.",
+      "key_driver": "Enterprise software trends, options activity."
+    },
+    "MU": {
+      "bull_probability": 0.34,
+      "bear_probability": 0.23,
+      "sentiment": "Retail bullish on AI/memory, institutions cautious.",
+      "key_driver": "AI/memory demand, sector news."
+    },
+    "QCOM": {
+      "bull_probability": 0.33,
+      "bear_probability": 0.24,
+      "sentiment": "Retail bullish on AI/mobile, institutions cautious.",
+      "key_driver": "AI/mobile demand, sector news."
+    }
+  },
+  "dominant_narrative": "The main market story is the contest between macro/policy uncertainty (inflation, central bank signals, and geopolitical risk) and tech sector leadership, with AI and semiconductor stocks at the center. Volatility is elevated as agents debate whether tech momentum can overcome macro headwinds.",
+  "narrative_shift": "A surprise in macro data (inflation or employment), a major central bank announcement, or a significant regulatory or geopolitical event could rapidly shift the narrative from tech optimism to risk-off, or vice versa. A viral political event (e.g., Trump post) could also trigger a sudden bullish reversal.",
+  "bull_argument": "Tech sector leadership, especially in AI and semiconductors, continues to drive market gains. Retail sentiment is resilient, and any positive macro or political surprise could trigger a sharp rally, especially if inflation fears subside or central banks signal dovishness.",
+  "bear_argument": "Rising inflation expectations, hawkish central bank signals, regulatory crackdowns on Big Tech, or a major geopolitical escalation could trigger forced position unwinds, a spike in volatility, and a sharp market drawdown. Institutions and macro agents are already hedging for downside risk.",
+  "wildcards": [
+    "Closure or disruption of the Strait of Hormuz causing an oil price shock",
+    "Surprise Fed rate hike or hawkish policy shift",
+    "Major regulatory action or antitrust suit against Big Tech",
+    "A viral political event (e.g., Trump post or unexpected legislation)",
+    "Sudden escalation in US-China trade tensions",
+    "Unexpected earnings miss or guidance cut from a mega-cap tech company",
+    "Forced position unwinds by global hedge funds"
+  ],
+  "agent_consensus": 0.38,
+  "date_generated": "2026-03-31",
+  "horizon": "t1",
+  "target_date": "2026-04-01",
+  "extraction_method": "llm"
+}

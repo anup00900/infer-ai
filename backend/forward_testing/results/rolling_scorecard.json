@@ -1,9 +1,19 @@
 {
-  "as_of": "2026-03-31T05:40:05.092163+00:00",
-  "total_predictions": 1,
+  "as_of": "2026-04-02T22:00:17.260845+00:00",
+  "total_predictions": 6,
   "t1_accuracy": {
+    "count": 4,
+    "avg_ticker_direction_accuracy": 0.477,
+    "sp500_highest_prob_correct_rate": 0.0
+  },
+  "t3_accuracy": {
     "count": 1,
-    "avg_ticker_direction_accuracy": 0.364,
+    "avg_ticker_direction_accuracy": 0.091,
+    "sp500_highest_prob_correct_rate": 0.0
+  },
+  "t7_accuracy": {
+    "count": 1,
+    "avg_ticker_direction_accuracy": 0.455,
     "sp500_highest_prob_correct_rate": 0.0
   }
 }

@@ -1,0 +1,109 @@
+{
+  "sp500_scenarios": {
+    "bull": {
+      "probability": 0.2,
+      "narrative": "Bull scenario probability is weighted higher by retail traders (25-30%) but lower by institutions (15-20%) and hedge funds (10-15%). The narrative centers on mega-cap tech earnings beats, optimism around AI and innovation, and expectations of further Fed easing. Retail sentiment is driven by meme-stock rebounds and hopes for a sharp recovery, while institutions see upside as possible if macro data surprises positively and geopolitical risks recede."
+    },
+    "base": {
+      "probability": 0.45,
+      "narrative": "Base scenario is favored by institutions (50-55%) and hedge funds (40-45%), with retail assigning it less weight (35-40%). The narrative is one of sideways or moderately positive movement, driven by cautious optimism on Fed policy, mixed macro data, and a wait-and-see approach to tech earnings. Defensive positioning and hedging are prevalent, with market participants wary of sudden shocks but not expecting a major move in either direction."
+    },
+    "bear": {
+      "probability": 0.25,
+      "narrative": "Bear scenario probability is elevated among hedge funds (30-35%) and institutions (20-25%), with retail assigning similar weight (20-25%). The narrative is dominated by concerns over forced liquidations, margin calls, geopolitical flashpoints (especially in the Middle East), and policy surprises. There is anxiety about mega-cap tech underperformance and the risk of a broader market correction."
+    },
+    "tail": {
+      "probability": 0.1,
+      "narrative": "Tail scenario (sharp down) is assigned 5-10% by institutions, 10-15% by retail, and 10-15% by hedge funds. The narrative centers on the risk of a sudden macro or geopolitical shock, such as a major oil supply disruption, unexpected Fed tightening, or a severe escalation in global conflict. Forced liquidations and systemic risk events are key triggers for this scenario."
+    }
+  },
+  "oil_outlook": "Oil prices are expected to remain elevated or move higher due to ongoing Middle East tensions and the risk of supply disruptions, particularly if the Strait of Hormuz remains partially or fully closed. Goldman Sachs and Oxford Economics forecasts suggest Brent could average $110–$140/bbl if disruptions persist, with potential for recessionary drag on global growth. The market is highly sensitive to geopolitical headlines and supply chain risks.",
+  "gold_outlook": "Gold is likely to trend higher as investors seek safe-haven assets amid elevated geopolitical risk, macro uncertainty, and volatility in equities. Persistent anxiety over oil shocks and policy ambiguity supports demand for gold as a hedge.",
+  "vix_outlook": "Volatility is expected to remain elevated, with the VIX reflecting widespread hedging and speculative activity. Options markets signal anticipation of large moves in both directions, and scenario probabilities could shift rapidly in response to news flow. The market is bracing for potential shocks and sharp swings.",
+  "ticker_outlook": {
+    "NVDA": {
+      "bull_probability": 0.5,
+      "bear_probability": 0.35,
+      "sentiment": "Highly polarized; retail is euphoric and risk-seeking, institutions are cautious but constructive with heavy hedging. Volatility is expected to be extreme.",
+      "key_driver": "AI leadership narrative, options activity, sensitivity to macro/regulatory headlines, and sector leadership status."
+    },
+    "AAPL": {
+      "bull_probability": 0.45,
+      "bear_probability": 0.3,
+      "sentiment": "Cautiously optimistic; institutions focus on earnings quality and product cycle, retail sentiment is more reactive to news.",
+      "key_driver": "Earnings momentum, product announcements, and macro sensitivity."
+    },
+    "MSFT": {
+      "bull_probability": 0.4,
+      "bear_probability": 0.35,
+      "sentiment": "Mixed; recent underperformance has increased skepticism, but long-term AI/cloud narrative remains supportive.",
+      "key_driver": "AI/cloud growth, earnings execution, and sector rotation."
+    },
+    "GOOGL": {
+      "bull_probability": 0.4,
+      "bear_probability": 0.35,
+      "sentiment": "Cautious; concerns about regulatory risk and digital ad market, but AI investments provide upside optionality.",
+      "key_driver": "AI monetization, regulatory headlines, and digital ad trends."
+    },
+    "META": {
+      "bull_probability": 0.4,
+      "bear_probability": 0.3,
+      "sentiment": "Cautious optimism; institutions focus on AI and regulatory risk, retail is speculative and meme-driven.",
+      "key_driver": "AI monetization, regulatory scrutiny, and social media-driven volatility."
+    },
+    "AMZN": {
+      "bull_probability": 0.45,
+      "bear_probability": 0.3,
+      "sentiment": "Constructive; focus on cloud growth and retail resilience, but macro headwinds persist.",
+      "key_driver": "Cloud segment performance, consumer trends, and macro data."
+    },
+    "AMD": {
+      "bull_probability": 0.45,
+      "bear_probability": 0.3,
+      "sentiment": "Balanced; institutions are increasingly constructive on AI/data center, retail is split between optimism and skepticism.",
+      "key_driver": "Enterprise AI adoption, product momentum, and competition with NVDA."
+    },
+    "AVGO": {
+      "bull_probability": 0.4,
+      "bear_probability": 0.3,
+      "sentiment": "Steady; seen as a quality growth/defensive play in semis, less speculative than NVDA/AMD.",
+      "key_driver": "AI/data center exposure, earnings quality, and sector rotation."
+    },
+    "ORCL": {
+      "bull_probability": 0.4,
+      "bear_probability": 0.3,
+      "sentiment": "Cautiously optimistic; focus on cloud transition and enterprise demand.",
+      "key_driver": "Cloud growth, enterprise IT spending, and macro sensitivity."
+    },
+    "MU": {
+      "bull_probability": 0.4,
+      "bear_probability": 0.3,
+      "sentiment": "Mixed; memory cycle optimism offset by macro and supply chain risks.",
+      "key_driver": "Memory pricing, AI/data center demand, and supply chain developments."
+    },
+    "QCOM": {
+      "bull_probability": 0.4,
+      "bear_probability": 0.3,
+      "sentiment": "Cautious; mobile market headwinds but AI/edge computing provide upside.",
+      "key_driver": "AI/edge computing adoption, handset demand, and regulatory headlines."
+    }
+  },
+  "dominant_narrative": "The main market story is the uncertainty around Federal Reserve policy, inflation data, and the timing/extent of rate cuts, combined with the pivotal role of mega-cap tech earnings (especially NVDA, AAPL, MSFT, META, AMZN, and GOOGL) in driving S&P 500 direction. Geopolitical risk, particularly in the Middle East and oil markets, and elevated volatility are amplifying both upside and downside tails. The market is highly reactive, with scenario probabilities and narratives shifting rapidly in response to news.",
+  "narrative_shift": "The narrative is shifting from 'AI euphoria and tech sector leadership' to 'macro and geopolitical anxiety,' with growing skepticism about the sustainability of the tech rally, increased focus on regulatory and competitive risks, and heightened sensitivity to oil shocks and Fed policy ambiguity. A single headline or policy move could rapidly reweight scenario probabilities.",
+  "bull_argument": "Mega-cap tech earnings continue to beat expectations, AI adoption accelerates, and the Federal Reserve signals further easing, driving a sharp rebound in equities. Geopolitical tensions de-escalate, oil prices stabilize, and retail-driven momentum amplifies upside in high-beta names like NVDA and AMD.",
+  "bear_argument": "A sudden geopolitical escalation or oil supply shock triggers forced liquidations and margin calls, while disappointing macro data or a hawkish Fed surprise undermines confidence. Mega-cap tech underperforms, regulatory risks materialize, and volatility spikes, leading to a sharp market correction.",
+  "wildcards": [
+    "Major escalation in Middle East conflict leading to oil supply disruption",
+    "Unexpected Federal Reserve policy shift (hawkish or dovish)",
+    "Regulatory crackdown on AI or semiconductor exports",
+    "Sudden forced liquidations or margin calls among large hedge funds",
+    "Viral meme-stock surge or panic sell-off driven by social media",
+    "Surprise mega-cap tech earnings miss or guidance cut",
+    "Political headline or presidential statement that shifts market sentiment overnight"
+  ],
+  "agent_consensus": 0.4,
+  "date_generated": "2026-04-01",
+  "horizon": "t1",
+  "target_date": "2026-04-02",
+  "extraction_method": "llm"
+}

@@ -1,0 +1,109 @@
+{
+  "sp500_scenarios": {
+    "bull": {
+      "probability": 0.25,
+      "narrative": "A strong rebound (>1.5%) driven by oversold conditions, potential for relief rally if overnight headlines turn positive (e.g., Trump post, dovish Fed, surprise earnings beat). Retail and some hedge funds point to the possibility of a sharp reversal if sentiment shifts or positive news emerges."
+    },
+    "base": {
+      "probability": 0.425,
+      "narrative": "Sideways or modest move as markets digest mixed earnings (notably NVDA and AAPL), ongoing Fed ambiguity, and elevated geopolitical tension (Iran conflict, Strait of Hormuz). Institutional and macro strategists argue for a cautious, range-bound session, reinforced by option market signals and increased institutional hedging."
+    },
+    "bear": {
+      "probability": 0.25,
+      "narrative": "Renewed decline (>1.5%) due to unresolved geopolitical shocks (Iran war, energy price spikes), inflation uncertainty, fragile liquidity (forced hedge fund unwinds), and persistent VIX elevation. Macro agents and some institutional desks highlight downside risk, with oil and gold surges as safe havens."
+    },
+    "tail": {
+      "probability": 0.075,
+      "narrative": "Extreme move (flash crash or violent short squeeze) if margin calls accelerate or positioning is too one-sided. Options market chatter points to unusual put/call skews and mechanical bagdump on passive index funds. Both retail and some macro voices highlight outlier risks."
+    }
+  },
+  "oil_outlook": "Oil prices are expected to remain elevated or rise further due to ongoing geopolitical shocks, particularly the Iran conflict and disruptions in the Strait of Hormuz. Energy price spikes are a central risk, with Brent crude volatility influencing inflation fears and S&P 500 downside.",
+  "gold_outlook": "Gold is likely to trend higher as a safe haven amid persistent macro and geopolitical uncertainty, with investors seeking protection from inflation and market volatility.",
+  "vix_outlook": "Volatility is expected to remain elevated, with VIX levels staying high due to increased institutional hedging, options market skews, and ongoing macro/geopolitical risks. The market is on edge, and volatility could spike further on surprise events.",
+  "ticker_outlook": {
+    "NVDA": {
+      "bull_probability": 0.45,
+      "bear_probability": 0.4,
+      "sentiment": "Deeply split; retail bullish on AI leadership, institutions cautious on sustainability and volatility.",
+      "key_driver": "AI/semiconductor narrative, earnings, options activity, and macro risk."
+    },
+    "AAPL": {
+      "bull_probability": 0.35,
+      "bear_probability": 0.3,
+      "sentiment": "Mixed; focus on AI strategy, earnings risk, and macro exposure.",
+      "key_driver": "Earnings, AI strategy, and consumer sentiment."
+    },
+    "MSFT": {
+      "bull_probability": 0.3,
+      "bear_probability": 0.35,
+      "sentiment": "Cautious; concerns about AI impact on performance, risk of disappointing quarter.",
+      "key_driver": "AI performance, earnings, and sector rotation."
+    },
+    "GOOGL": {
+      "bull_probability": 0.32,
+      "bear_probability": 0.28,
+      "sentiment": "Neutral to slightly positive; less volatile but sensitive to AI and macro headlines.",
+      "key_driver": "AI developments, ad revenue, and macro news."
+    },
+    "META": {
+      "bull_probability": 0.38,
+      "bear_probability": 0.3,
+      "sentiment": "Mixed; optimism on AI and recent earnings, but retail wary of volatility.",
+      "key_driver": "Earnings, AI initiatives, and retail sentiment."
+    },
+    "AMZN": {
+      "bull_probability": 0.33,
+      "bear_probability": 0.3,
+      "sentiment": "Swing factor; concerns about AI spending and macro headwinds.",
+      "key_driver": "AI/cloud spending, earnings, and consumer trends."
+    },
+    "AMD": {
+      "bull_probability": 0.4,
+      "bear_probability": 0.38,
+      "sentiment": "Split; retail optimistic, analysts cautious on demand and export controls.",
+      "key_driver": "Semiconductor demand, export policy, and gaming trends."
+    },
+    "AVGO": {
+      "bull_probability": 0.34,
+      "bear_probability": 0.28,
+      "sentiment": "Moderate; less volatile, follows sector trends.",
+      "key_driver": "Semiconductor sector momentum and macro news."
+    },
+    "ORCL": {
+      "bull_probability": 0.3,
+      "bear_probability": 0.27,
+      "sentiment": "Stable; acts as a swing factor, less narrative-driven.",
+      "key_driver": "Cloud/enterprise demand and sector rotation."
+    },
+    "MU": {
+      "bull_probability": 0.37,
+      "bear_probability": 0.33,
+      "sentiment": "Elevated volatility; focus on memory demand and AI exposure.",
+      "key_driver": "Memory chip demand, AI narrative, and earnings."
+    },
+    "QCOM": {
+      "bull_probability": 0.32,
+      "bear_probability": 0.29,
+      "sentiment": "Neutral; follows sector, sensitive to macro and tech headlines.",
+      "key_driver": "Semiconductor sector, mobile/AI trends, and macro risk."
+    }
+  },
+  "dominant_narrative": "Narrative volatility and uncertainty dominate, with markets torn between hope for a rebound and anxiety over persistent macro, geopolitical, and liquidity risks. The main story is the struggle between resilience in mega-cap tech and the threat of further shocks from energy, inflation, and forced liquidations.",
+  "narrative_shift": "The narrative could shift rapidly on overnight headlines—positive earnings surprises, political intervention (e.g., Trump or Fed), or a sudden easing of geopolitical tensions could spark a relief rally. Conversely, escalation in the Iran conflict, negative macro data, or further forced liquidations could reinforce the bear or tail risk scenarios.",
+  "bull_argument": "Markets are oversold after recent declines, with mega-cap tech showing resilience and the potential for a relief rally if earnings or macro headlines surprise to the upside. Retail sentiment is primed for a sharp reversal if fear abates and positive catalysts emerge.",
+  "bear_argument": "Persistent macro and geopolitical risks (Iran war, energy price spikes), inflation uncertainty, and fragile liquidity (margin calls, forced hedge fund unwinds) create a skew to the downside. Elevated volatility and institutional hedging signal ongoing risk aversion, with the potential for further declines or even a flash crash.",
+  "wildcards": [
+    "Sudden escalation or resolution in the Iran conflict",
+    "Unexpected Fed policy pivot or emergency intervention",
+    "Major earnings surprise (positive or negative) from mega-cap tech",
+    "Mechanical forced liquidations or margin calls triggering a flash crash",
+    "OPEC emergency meeting or oil supply shock",
+    "Cyberattack or major regulatory move in AI/tech sector",
+    "Political intervention or surprise announcement (e.g., Trump post, new sanctions)"
+  ],
+  "agent_consensus": 0.35,
+  "date_generated": "2026-04-02",
+  "horizon": "t1",
+  "target_date": "2026-04-03",
+  "extraction_method": "llm"
+}

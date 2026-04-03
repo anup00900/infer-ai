@@ -1,0 +1,108 @@
+{
+  "sp500_scenarios": {
+    "bull": {
+      "probability": 0.2,
+      "narrative": "Upside scenario driven by easing inflation, improving global growth prospects, strong tech earnings, or dovish signals from central banks. AI optimism and resilient consumer spending could provide a tailwind for equities."
+    },
+    "base": {
+      "probability": 0.5,
+      "narrative": "Sideways to modestly upward movement with continued volatility, remaining within a moderate growth channel. Supported by resilient corporate earnings and optimistic outlooks, but tempered by macro and geopolitical uncertainty."
+    },
+    "bear": {
+      "probability": 0.25,
+      "narrative": "Correction exceeding 5-10% if labor market strength falters or if geopolitical risks escalate unexpectedly. A meaningful pullback could happen on any clear negative catalyst, whether economic or geopolitical."
+    },
+    "tail": {
+      "probability": 0.05,
+      "narrative": "Major escalation in geopolitical conflict (e.g., Strait of Hormuz blockade, US-China deterioration), sudden central bank policy reversal, or systemic shock in tech/AI triggers a sharp market dislocation."
+    }
+  },
+  "oil_outlook": "Oil prices are expected to remain elevated ($90–110/bbl) due to ongoing geopolitical risks, especially surrounding Iran and the Strait of Hormuz. Volatility is driven by OPEC+ actions and inventory data, with a risk of a major supply disruption pushing prices above $120/bbl if conflict escalates. A ceasefire or diplomatic breakthrough could lead to a sharp pullback below $85/bbl, but the base case is for continued high prices supporting inflation expectations and pressuring consumer sectors.",
+  "gold_outlook": "Gold is likely to hold steady or move modestly higher ($2,100–2,250/oz) as safe-haven demand persists amid macro and geopolitical uncertainty. Upside risk exists if there is a geopolitical escalation or dovish central bank pivot, while a risk-on reversal or higher real yields could pressure gold below $2,000. Tail risk includes a spike from crypto market instability or a global liquidity event.",
+  "vix_outlook": "Volatility is expected to remain elevated due to macro regime uncertainty, with the VIX likely to stay above recent lows. Any surprise in inflation data, central bank signaling, or geopolitical escalation could trigger sharp spikes in volatility.",
+  "ticker_outlook": {
+    "NVDA": {
+      "bull_probability": 0.22,
+      "bear_probability": 0.28,
+      "sentiment": "volatile/neutral",
+      "key_driver": "AI chip export policy, AI product launches, US-China tensions"
+    },
+    "AAPL": {
+      "bull_probability": 0.18,
+      "bear_probability": 0.25,
+      "sentiment": "cautiously positive",
+      "key_driver": "Anniversary events, supply chain/memory shortage updates"
+    },
+    "MSFT": {
+      "bull_probability": 0.17,
+      "bear_probability": 0.27,
+      "sentiment": "mixed",
+      "key_driver": "AI product updates, earnings pre-announcements"
+    },
+    "GOOGL": {
+      "bull_probability": 0.19,
+      "bear_probability": 0.23,
+      "sentiment": "neutral",
+      "key_driver": "Antitrust litigation, AI/cloud business news"
+    },
+    "META": {
+      "bull_probability": 0.21,
+      "bear_probability": 0.29,
+      "sentiment": "volatile/negative",
+      "key_driver": "AI infrastructure spending, ad market trends, regulatory risk"
+    },
+    "AMZN": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.22,
+      "sentiment": "neutral",
+      "key_driver": "Cloud growth, consumer spending, AI/automation investments"
+    },
+    "AMD": {
+      "bull_probability": 0.16,
+      "bear_probability": 0.3,
+      "sentiment": "cautious/negative",
+      "key_driver": "Export controls, AI chip orders, gaming hardware demand"
+    },
+    "AVGO": {
+      "bull_probability": 0.23,
+      "bear_probability": 0.2,
+      "sentiment": "positive",
+      "key_driver": "AI chip demand, hyperscaler orders"
+    },
+    "ORCL": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.18,
+      "sentiment": "positive",
+      "key_driver": "Cloud infrastructure wins, AI partnerships"
+    },
+    "MU": {
+      "bull_probability": 0.19,
+      "bear_probability": 0.24,
+      "sentiment": "neutral",
+      "key_driver": "Memory pricing, supply shortages, AI server demand"
+    },
+    "QCOM": {
+      "bull_probability": 0.18,
+      "bear_probability": 0.25,
+      "sentiment": "neutral/negative",
+      "key_driver": "Memory shortage, AI chip demand, export controls"
+    }
+  },
+  "dominant_narrative": "The main market story is macro regime uncertainty, with intense focus on upcoming US inflation data, central bank signaling, and the interplay between macroeconomic and technology sector narratives. Investors are watching for signals from the Fed and ECB, while AI and semiconductor innovation remain key sector themes.",
+  "narrative_shift": "The narrative could shift rapidly if inflation data or central bank guidance surprises, or if a major geopolitical event occurs. A dovish Fed pivot or de-escalation in the Middle East could trigger a risk-on rally, while a policy surprise or escalation could drive a sharp risk-off move.",
+  "bull_argument": "Resilient corporate earnings, ongoing AI innovation, and a possible dovish pivot by central banks could drive renewed upside momentum. If inflation moderates and global growth prospects improve, equities—especially tech—could outperform.",
+  "bear_argument": "Policy tightening, persistent inflation, and heightened geopolitical risk could trigger a correction. Overextended valuations and vulnerability to negative catalysts—such as a labor market slowdown or escalation in global conflict—pose significant downside risk.",
+  "wildcards": [
+    "Sudden central bank policy reversal or surprise rate hike",
+    "Major geopolitical escalation (e.g., Iran/Israel, Strait of Hormuz blockade)",
+    "Systemic shock in tech earnings or AI-related news",
+    "Evidence of financial instability or passive index fund liquidation",
+    "Unexpected economic data (hot inflation, weak labor market)",
+    "Crypto market instability impacting liquidity"
+  ],
+  "agent_consensus": 0.55,
+  "date_generated": "2026-04-02",
+  "horizon": "t7",
+  "target_date": "2026-04-13",
+  "extraction_method": "llm"
+}

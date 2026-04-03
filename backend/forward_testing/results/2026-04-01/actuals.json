@@ -1,0 +1,127 @@
+{
+  "date": "2026-04-01",
+  "fetched_at": "2026-04-03T06:27:07.106727+00:00",
+  "market": {
+    "sp500": {
+      "close": 6575.32,
+      "prev_close": 6528.52,
+      "change_pct": 0.72,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "vix": {
+      "close": 24.54,
+      "prev_close": 25.25,
+      "change_pct": -2.81,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "treasury_10y": {
+      "close": 4.32,
+      "prev_close": 4.31,
+      "change_pct": 0.23,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "brent_crude": {
+      "close": 101.16,
+      "prev_close": 118.35,
+      "change_pct": -14.52,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "gold": {
+      "close": 4783.2,
+      "prev_close": 4647.6,
+      "change_pct": 2.92,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "dollar_index": {
+      "close": 99.65,
+      "prev_close": 99.96,
+      "change_pct": -0.31,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    }
+  },
+  "tickers": {
+    "NVDA": {
+      "close": 175.75,
+      "prev_close": 174.4,
+      "change_pct": 0.77,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "AAPL": {
+      "close": 255.63,
+      "prev_close": 253.79,
+      "change_pct": 0.73,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "MSFT": {
+      "close": 369.37,
+      "prev_close": 370.17,
+      "change_pct": -0.22,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "GOOGL": {
+      "close": 297.39,
+      "prev_close": 287.56,
+      "change_pct": 3.42,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "META": {
+      "close": 579.23,
+      "prev_close": 572.13,
+      "change_pct": 1.24,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "AMZN": {
+      "close": 210.57,
+      "prev_close": 208.27,
+      "change_pct": 1.1,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "AMD": {
+      "close": 210.21,
+      "prev_close": 203.43,
+      "change_pct": 3.33,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "AVGO": {
+      "close": 313.49,
+      "prev_close": 309.51,
+      "change_pct": 1.29,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "ORCL": {
+      "close": 145.23,
+      "prev_close": 147.11,
+      "change_pct": -1.28,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "MU": {
+      "close": 367.85,
+      "prev_close": 337.84,
+      "change_pct": 8.88,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    },
+    "QCOM": {
+      "close": 127.28,
+      "prev_close": 128.78,
+      "change_pct": -1.16,
+      "date": "2026-04-01",
+      "prev_date": "2026-03-31"
+    }
+  }
+}

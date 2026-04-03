@@ -2,12 +2,12 @@
   "prediction_date": "2026-03-29",
   "horizon": "t1",
   "target_date": "2026-03-30",
-  "scored_at": "2026-03-31T05:40:05.085660+00:00",
+  "scored_at": "2026-04-03T06:27:13.216923+00:00",
   "market_score": {
-    "sp500_actual": 6376.39,
-    "sp500_change_pct": 0.12,
+    "sp500_actual": 6343.72,
+    "sp500_change_pct": -0.39,
     "predicted_direction": "down",
-    "direction_correct": false,
+    "direction_correct": true,
     "bull_probability": 0.225,
     "base_probability": 0.475,
     "bear_probability": 0.225
@@ -18,7 +18,7 @@
       "predicted_direction": "up",
       "bull_probability": 0.3,
       "bear_probability": 0.25,
-      "actual_change_pct": -0.58,
+      "actual_change_pct": -1.4,
       "direction_correct": false
     },
     {
@@ -26,7 +26,7 @@
       "predicted_direction": "up",
       "bull_probability": 0.25,
       "bear_probability": 0.2,
-      "actual_change_pct": -0.47,
+      "actual_change_pct": -0.87,
       "direction_correct": false
     },
     {
@@ -34,7 +34,7 @@
       "predicted_direction": "down",
       "bull_probability": 0.2,
       "bear_probability": 0.25,
-      "actual_change_pct": 1.1,
+      "actual_change_pct": 0.61,
       "direction_correct": false
     },
     {
@@ -42,7 +42,7 @@
       "predicted_direction": "up",
       "bull_probability": 0,
       "bear_probability": 0,
-      "actual_change_pct": -0.19,
+      "actual_change_pct": -0.31,
       "direction_correct": false
     },
     {
@@ -50,7 +50,7 @@
       "predicted_direction": "down",
       "bull_probability": 0.2,
       "bear_probability": 0.3,
-      "actual_change_pct": 1.18,
+      "actual_change_pct": 2.03,
       "direction_correct": false
     },
     {
@@ -58,7 +58,7 @@
       "predicted_direction": "up",
       "bull_probability": 0.2,
       "bear_probability": 0.2,
-      "actual_change_pct": 1.13,
+      "actual_change_pct": 0.81,
       "direction_correct": true
     },
     {
@@ -66,15 +66,15 @@
       "predicted_direction": "up",
       "bull_probability": 0.25,
       "bear_probability": 0.25,
-      "actual_change_pct": 0.44,
-      "direction_correct": true
+      "actual_change_pct": -2.95,
+      "direction_correct": false
     },
     {
       "ticker": "AVGO",
       "predicted_direction": "up",
       "bull_probability": 0.25,
       "bear_probability": 0.2,
-      "actual_change_pct": -1.95,
+      "actual_change_pct": -2.42,
       "direction_correct": false
     },
     {
@@ -82,7 +82,7 @@
       "predicted_direction": "down",
       "bull_probability": 0.15,
       "bear_probability": 0.2,
-      "actual_change_pct": -0.93,
+      "actual_change_pct": -0.62,
       "direction_correct": true
     },
     {
@@ -90,7 +90,7 @@
       "predicted_direction": "up",
       "bull_probability": 0.2,
       "bear_probability": 0.2,
-      "actual_change_pct": -3.96,
+      "actual_change_pct": -9.88,
       "direction_correct": false
     },
     {
@@ -98,13 +98,13 @@
       "predicted_direction": "up",
       "bull_probability": 0.2,
       "bear_probability": 0.2,
-      "actual_change_pct": 0.46,
-      "direction_correct": true
+      "actual_change_pct": -0.03,
+      "direction_correct": false
     }
   ],
   "macro_scores": {},
   "summary": {
-    "ticker_direction_accuracy": 0.364,
+    "ticker_direction_accuracy": 0.182,
     "sp500_scenario_hit": null,
     "sp500_highest_prob_correct": null
   }

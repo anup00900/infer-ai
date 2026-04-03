@@ -1,0 +1,108 @@
+{
+  "sp500_scenarios": {
+    "bull": {
+      "probability": 0.22,
+      "narrative": "AI-driven productivity, resilient earnings, and dovish Fed signals trigger a relief rally, especially in mega-cap tech and semiconductors. Upside surprise is catalyzed by continued AI and cloud-related growth themes, as well as resilient balance sheets and earnings beats."
+    },
+    "base": {
+      "probability": 0.575,
+      "narrative": "Sideways-to-moderate-up outcome, with ongoing sector rotation and volatility as the market digests Fed policy, oil shocks, and earnings. The dominant narrative is the interplay between Federal Reserve monetary policy and the durability of corporate earnings, particularly in large-cap technology."
+    },
+    "bear": {
+      "probability": 0.17,
+      "narrative": "Persistent inflation, the timing of potential rate cuts, and global uncertainties drive downside. Risks include hawkish Fed surprises, geopolitical escalations, or a sharp deterioration in labor or credit markets."
+    },
+    "tail": {
+      "probability": 0.035,
+      "narrative": "Low-probability, high-impact wildcards such as an unexpected rate move by central banks, a major geopolitical event, or a sudden liquidity crunch in shadow banking rapidly disrupt markets."
+    }
+  },
+  "oil_outlook": "Oil prices are expected to remain elevated or trend higher due to ongoing geopolitical tensions in the Middle East (Strait of Hormuz, US-Iran, Houthi disruptions) and supply risks, with Goldman projecting an average price of $110 for March–April. Market participants are alert to further shocks or supply disruptions.",
+  "gold_outlook": "Gold is likely to remain firm or trend higher as investors seek safe havens amid geopolitical uncertainty, persistent inflation concerns, and episodic risk-off flows driven by oil shocks and Fed ambiguity.",
+  "vix_outlook": "Volatility is expected to remain elevated and episodic, with the VIX reflecting heightened narrative volatility and rapid shifts in risk appetite as new macro, geopolitical, or regulatory headlines emerge.",
+  "ticker_outlook": {
+    "NVDA": {
+      "bull_probability": 0.3,
+      "bear_probability": 0.15,
+      "sentiment": "Polarized; high asymmetric risk/reward with strong bull and bear camps",
+      "key_driver": "AI infrastructure demand, regulatory risk (export controls), valuation reset"
+    },
+    "AAPL": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.15,
+      "sentiment": "Cautiously optimistic with supply chain concerns",
+      "key_driver": "AI product announcements, memory shortages, supply chain stability"
+    },
+    "MSFT": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.15,
+      "sentiment": "Constructive but sensitive to macro and tech sector flows",
+      "key_driver": "Cloud/AI momentum, earnings durability, sector rotation"
+    },
+    "GOOGL": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.15,
+      "sentiment": "Positive bias with episodic risk from regulatory and ad market headlines",
+      "key_driver": "AI/Cloud growth, digital ad trends, regulatory environment"
+    },
+    "META": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.15,
+      "sentiment": "Constructive with focus on AI and platform engagement",
+      "key_driver": "AI-driven engagement, ad revenue, regulatory risk"
+    },
+    "AMZN": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.15,
+      "sentiment": "Positive with focus on cloud and consumer resilience",
+      "key_driver": "AWS growth, consumer demand, macro sensitivity"
+    },
+    "AMD": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.15,
+      "sentiment": "High event risk; sensitive to policy and sector rotation",
+      "key_driver": "Export controls, AI chip demand, sector flows"
+    },
+    "AVGO": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.15,
+      "sentiment": "Constructive with AI and cloud tailwinds",
+      "key_driver": "AI/cloud infrastructure demand, sector rotation"
+    },
+    "ORCL": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.15,
+      "sentiment": "Positive bias on cloud transition",
+      "key_driver": "Cloud adoption, enterprise IT spending"
+    },
+    "MU": {
+      "bull_probability": 0.2,
+      "bear_probability": 0.15,
+      "sentiment": "High asymmetric risk/reward; event-driven",
+      "key_driver": "Memory market dynamics, AI demand, policy risk"
+    },
+    "QCOM": {
+      "bull_probability": 0.25,
+      "bear_probability": 0.15,
+      "sentiment": "Cautiously optimistic with supply chain and export risk",
+      "key_driver": "AI/mobile chip demand, memory shortages, export controls"
+    }
+  },
+  "dominant_narrative": "There is no single dominant narrative; instead, the market is defined by heightened narrative volatility, deep agent polarization, and a persistent tug-of-war between risk-on tech optimism (AI, semiconductors) and defensive caution driven by macro, geopolitical, and Fed catalysts.",
+  "narrative_shift": "The narrative may shift abruptly in response to new macro data, Fed communications, or geopolitical events—especially oil shocks or regulatory headlines in AI and semiconductors. Consensus is fleeting and can be rapidly invalidated by unexpected catalysts.",
+  "bull_argument": "AI-driven productivity gains, resilient corporate earnings, and potential dovish pivots from the Fed could trigger a relief rally in mega-cap tech and semiconductors, with sector rotation amplifying upside in leading growth names.",
+  "bear_argument": "Persistent inflation, hawkish Fed surprises, escalating geopolitical conflicts (especially in the Middle East), and regulatory crackdowns on AI and semiconductors could drive sharp downside, particularly in crowded tech trades.",
+  "wildcards": [
+    "Sudden escalation in Middle East conflict (Strait of Hormuz, US-Iran, Houthi disruptions)",
+    "Unexpected Fed rate move or hawkish communication",
+    "Abrupt regulatory intervention in AI or semiconductor exports",
+    "Large-scale cyber event affecting financial markets infrastructure",
+    "Major supply chain disruption (e.g., memory shortages, chip bans)",
+    "Rapid acceleration in inflation or labor market deterioration"
+  ],
+  "agent_consensus": 0.45,
+  "date_generated": "2026-04-02",
+  "horizon": "t3",
+  "target_date": "2026-04-07",
+  "extraction_method": "llm"
+}

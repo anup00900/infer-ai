@@ -1,0 +1,10 @@
+{
+  "date": "2026-04-01",
+  "horizon": "t1",
+  "target_date": "2026-04-02",
+  "project_id": "proj_99906050e1e3",
+  "graph_id": "01ec456d-8d22-46a7-b84f-13d5553c2aef",
+  "simulation_id": "sim_ab70be7b9450",
+  "report_id": "report_c3bf227f6f68",
+  "report_path": "/Users/anup.roy/Downloads/Infer_Project/backend/forward_testing/results/2026-04-01/simulation_t1/report.md"
+}

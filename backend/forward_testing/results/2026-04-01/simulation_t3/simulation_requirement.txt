@@ -1,0 +1,23 @@
+FORWARD TESTING PREDICTION — T+3 (3 Trading Days Out)
+Run date: 2026-04-01 | Target date: 2026-04-06
+Tickers: NVDA, AAPL, MSFT, GOOGL, META, AMZN, AMD, AVGO, ORCL, MU, QCOM
+
+You are simulating market participants analyzing how current market dynamics evolve over the next 3 trading days through 2026-04-06. Use the uploaded financial intelligence report as your information base.
+
+Simulate diverse agents — institutional investors, retail traders, hedge fund managers, macro strategists, energy analysts, political commentators, tech analysts, risk managers — debating on Twitter and Reddit.
+
+Each agent should consider and debate:
+1. Does today's dominant narrative strengthen or fade over 3 days?
+2. S&P 500 trajectory — provide probability distributions across scenarios (bull/base/bear/tail) with ranges and detailed narratives for each
+3. Sector rotation signals — where is money flowing and why?
+4. Geopolitical escalation/de-escalation probability and impact
+5. Which ticker has the highest asymmetric risk/reward setup?
+6. Fed/political catalyst risk in the 3-day window
+7. Oil price trajectory and its cascading effects on consumer spending, margins, and inflation expectations
+8. Gold, treasury, and dollar index movements
+9. Per-ticker probability-weighted outlook: NVDA, AAPL, MSFT, GOOGL, META, AMZN, AMD, AVGO, ORCL, MU, QCOM
+10. Narrative prediction — what will be the dominant market story in 3 days?
+11. Agent consensus level — how divided are market participants?
+12. What wildcards could invalidate all scenarios?
+
+IMPORTANT: Provide probability distributions, NOT point predictions. Agents must debate with conviction and disagree. Capture bull camp arguments, bear camp arguments, and neutral reasoning.
